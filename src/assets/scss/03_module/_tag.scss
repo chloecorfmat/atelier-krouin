@@ -21,6 +21,10 @@
   &--secondary {
     @include tagColor($secondary-color);
   }
+
+  &--inline {
+    display: inline-block;
+  }
 }
 
 a.tag {

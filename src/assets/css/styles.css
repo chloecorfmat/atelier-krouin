@@ -6229,6 +6229,12 @@ h2,
   text-transform: uppercase;
 }
 
+.heading--with-tag {
+  display: inline-block;
+  vertical-align: sub;
+  margin-right: 2rem;
+}
+
 /** TEXTS **/
 a,
 li,
@@ -6694,6 +6700,21 @@ a {
   text-transform: capitalize;
 }
 
+/** PAGINATION **/
+/* Use in articles.html */
+.pagination {
+  text-align: center;
+}
+.pagination--item {
+  color: #7E617C;
+  display: inline-block;
+}
+.pagination--item--is-active .pagination--item--link {
+  color: #7E617C;
+  background: #FFF;
+  border: 2px solid #7E617C;
+}
+
 .tag {
   border-radius: 8px;
   color: #FFF;
@@ -6710,6 +6731,9 @@ a {
 }
 .tag--secondary {
   background: #7E617C;
+}
+.tag--inline {
+  display: inline-block;
 }
 
 a.tag {
