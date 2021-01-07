@@ -1,0 +1,47 @@
+/** BLOCK LIST ARTICLES **/
+/* Use in homepage */
+
+.list--articles {
+  &-item {
+    background: $white;
+    border-radius: 8px;
+
+    &:first-child {
+      .article--image--container {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        overflow: hidden;
+      }
+    }
+
+    &:not(:first-child) {
+      .article--image--container {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .article {
+    &--infos {
+      padding: 1rem;
+    }
+
+    &--title {
+      font-family: $kumbh-sans;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+
+    &--time {
+      font-size: .9rem;
+      margin-top: .5rem;
+    }
+
+    &--description {
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+  }
+}

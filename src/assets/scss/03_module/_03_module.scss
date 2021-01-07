@@ -1,0 +1,12 @@
+/** MODULES **/
+/* Use to define components (one file per component). */
+
+@import "article";
+@import "footer";
+@import "link";
+@import "logo_text";
+@import "tag";
+
+/** BLOCKS **/
+@import "blocks/introducing";
+@import "blocks/list-articles";
