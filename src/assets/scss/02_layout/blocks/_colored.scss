@@ -1,0 +1,27 @@
+/** BLOCK COLORED **/
+/* Use in article */
+
+.block--colored {
+  margin: 1rem 2rem 0;
+  padding: 2rem;
+
+  &:last-child {
+    margin-bottom: 1rem;
+
+    @include md {
+      margin-bottom: 3rem;
+    }
+
+    @include lg {
+      margin-bottom: 5rem;
+    }
+  }
+
+  @include md {
+    margin: 3rem 3rem 0;
+  }
+
+  @include lg {
+    margin: 5rem 10rem 0;
+  }
+}

@@ -26,6 +26,14 @@
       overflow: hidden;
     }
   }
+
+  &--details {
+    padding-top: 2rem;
+
+    .tag {
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 .article {

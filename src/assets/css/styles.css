@@ -6256,6 +6256,7 @@ a {
 /* Use to divide the page into sections. */
 /** BLOCK **/
 .block {
+  clear: both;
   padding: 1rem 2rem 0;
 }
 .block:last-child {
@@ -6408,6 +6409,36 @@ a {
 
 /** HOMEPAGE **/
 /** BLOCKS **/
+/** BLOCK COLORED **/
+/* Use in article */
+.block--colored {
+  margin: 1rem 2rem 0;
+  padding: 2rem;
+}
+.block--colored:last-child {
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .block--colored:last-child {
+    margin-bottom: 3rem;
+  }
+}
+@media (min-width: 992px) {
+  .block--colored:last-child {
+    margin-bottom: 5rem;
+  }
+}
+@media (min-width: 768px) {
+  .block--colored {
+    margin: 3rem 3rem 0;
+  }
+}
+@media (min-width: 992px) {
+  .block--colored {
+    margin: 5rem 10rem 0;
+  }
+}
+
 /** BLOCK INSTAGRAM **/
 /* Use in homepage */
 .block--instagram .list--instagram {
@@ -6476,34 +6507,37 @@ a {
 
 /** BLOCK LIST ARTICLES **/
 /* Use in homepage */
-.list--articles-item {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-.list--articles-item:first-child .article--image {
+.list--articles:not(.list--articles--in-page) .list--articles-item:first-child .article--image {
   height: 100%;
 }
+.list--articles:not(.list--articles--in-page) .list--articles-item:first-child:not(:first-child) {
+  height: 23rem;
+}
 @media (min-width: 1200px) {
-  .list--articles-item:first-child {
+  .list--articles:not(.list--articles--in-page) .list--articles-item:first-child {
     grid-column: 1/3;
   }
-  .list--articles-item:first-child .list--articles-item--container {
+  .list--articles:not(.list--articles--in-page) .list--articles-item:first-child .list--articles-item--container {
     flex-direction: row;
   }
-  .list--articles-item:first-child .list--articles-item--container .article--image--container, .list--articles-item:first-child .list--articles-item--container .article--infos {
+  .list--articles:not(.list--articles--in-page) .list--articles-item:first-child .list--articles-item--container .article--image--container, .list--articles:not(.list--articles--in-page) .list--articles-item:first-child .list--articles-item--container .article--infos {
     box-sizing: border-box;
     width: 50%;
   }
 }
+.list--articles-item {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
 @media (min-width: 1200px) {
+  .list--articles-item {
+    height: 23rem;
+  }
   .list--articles-item--container {
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
-  }
-  .list--articles-item:not(:first-child) {
-    height: 23rem;
   }
 }
 @media (min-width: 1200px) {
@@ -6580,6 +6614,22 @@ a {
   }
 }
 
+/** BLOCK SIGNATURE **/
+/* Use in article */
+.block--signature {
+  padding: 2rem 2rem 0;
+}
+@media (min-width: 768px) {
+  .block--signature {
+    padding: 2rem 3rem 0;
+  }
+}
+@media (min-width: 992px) {
+  .block--signature {
+    padding: 3rem 10rem 0;
+  }
+}
+
 /** MODULES **/
 /* Use to define components (one file per component). */
 /** ARTICLE **/
@@ -6604,6 +6654,12 @@ a {
   width: 100%;
   overflow: hidden;
 }
+.article--details {
+  padding-top: 2rem;
+}
+.article--details .tag {
+  margin-bottom: 1rem;
+}
 
 .article .article--title {
   font-size: 2.5rem;
@@ -6612,6 +6668,10 @@ a {
 .article .article--time {
   font-size: 1.2rem;
   margin: 1rem auto;
+}
+
+.fa-icon {
+  margin-right: 0.5rem;
 }
 
 /** FOOTER **/
@@ -6743,6 +6803,13 @@ a.tag {
 }
 
 /** BLOCKS **/
+/** BLOCK COLORED **/
+/* Use in article */
+.block--colored {
+  background: #E5E5E5;
+  border-radius: 8px;
+}
+
 /** INTRODUCING BLOCK **/
 .block--introducing {
   background: #DB8783;
@@ -6777,18 +6844,20 @@ a.tag {
 
 /** BLOCK LIST ARTICLES **/
 /* Use in homepage */
+.list--articles:not(.list--articles--in-page) .list--articles-item:first-child .article--image--container {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 8px;
+  overflow: hidden;
+}
 .list--articles-item {
   background: #FFF;
   border-radius: 8px;
 }
-.list--articles-item:first-child .article--image--container {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  overflow: hidden;
-}
-.list--articles-item:not(:first-child) .article--image--container {
+.list--articles-item .article--image--container {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  border-bottom-left-radius: 0;
   overflow: hidden;
 }
 .list--articles .article--infos {
@@ -6806,6 +6875,52 @@ a.tag {
 .list--articles .article--description {
   margin-top: 1rem;
   font-size: 1rem;
+}
+
+/** BLOCK PARAGRAPHS **/
+/* Use in article */
+.block--paragraph .image--float {
+  display: block;
+}
+.block--paragraph .image--50 {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .block--paragraph .image--container {
+    padding-right: 1rem;
+  }
+  .block--paragraph .image--float-left {
+    float: left;
+    padding-right: 1rem;
+  }
+  .block--paragraph .image--float-right {
+    float: right;
+    padding-left: 1rem;
+  }
+  .block--paragraph .image--50 {
+    width: 50%;
+  }
+  .block--paragraph .image--33 {
+    width: 33%;
+  }
+}
+.block--paragraph .image--paragraph {
+  border-radius: 8px;
+  width: 100%;
+}
+.block--paragraph .image--100 {
+  border-radius: 8px;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/** BLOCK SIGNATURE **/
+/* Use in article */
+.block--signature .signature {
+  font-family: "modernline", cursive;
+  font-size: 1.3rem;
+  text-align: right;
 }
 
 /*# sourceMappingURL=styles.css.map */

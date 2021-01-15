@@ -2,24 +2,29 @@
 /* Use in homepage */
 
 .list--articles {
+
+  &:not(.list--articles--in-page) {
+    .list--articles-item {
+      &:first-child {
+        .article--image--container {
+          border-top-left-radius: 8px;
+          border-top-right-radius: 0;
+          border-bottom-left-radius: 8px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
   &-item {
     background: $white;
     border-radius: 8px;
 
-    &:first-child {
-      .article--image--container {
-        border-top-left-radius: 8px;
-        border-bottom-left-radius: 8px;
-        overflow: hidden;
-      }
-    }
-
-    &:not(:first-child) {
-      .article--image--container {
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-        overflow: hidden;
-      }
+    .article--image--container {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      border-bottom-left-radius: 0;
+      overflow: hidden;
     }
   }
 

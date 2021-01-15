@@ -2,6 +2,7 @@
 /* Use to define components (one file per component). */
 
 @import "article";
+@import "fa-icon";
 @import "footer";
 @import "link";
 @import "logo-text";
@@ -9,5 +10,8 @@
 @import "tag";
 
 /** BLOCKS **/
+@import "blocks/colored";
 @import "blocks/introducing";
 @import "blocks/list-articles";
+@import "blocks/paragraphs";
+@import "blocks/signature";
