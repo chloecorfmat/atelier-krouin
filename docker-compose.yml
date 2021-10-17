@@ -2,8 +2,7 @@ version: '3.2'
 services:
   apache:
     restart: always
-    build:
-      context: ./apache
+    image: httpd:2.4
     volumes:
       - ./apache/nuxtDeploy/:/usr/local/apache2/htdocs/
     ports:
@@ -15,8 +14,6 @@ services:
     volumes:
       - ./apache/nuxtDeploy/:/opt/application/nuxtDeploy
       - ./nuxt/:/opt/application/nuxtSource
-    ports:
-      - 8090:8090
   strapi:
     image: strapi/strapi
     environment:
@@ -42,5 +39,3 @@ services:
       MYSQL_DATABASE: krouin
       MYSQL_USER: chloe
       MYSQL_PASSWORD: pass;1234
-    ports:
-      - '3306:3306'
