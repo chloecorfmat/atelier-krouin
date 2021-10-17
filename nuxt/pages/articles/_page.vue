@@ -1,0 +1,40 @@
+<template>
+  <main class="content page--list-articles">
+    <div class="block block--last-articles">
+      <h1 class="h2-like heading--with-tag">Tous les articles (page {{ page }})</h1>
+      <BlockArticles v-if="articles != null" :articles="articles" />
+      <Pagination :page="page" :pagesNb="pagesNb" v-if="pagesNb > 1" baseUrl="/articles/"/>
+    </div>
+  </main>
+</template>
+<script>
+  import BlockArticles from "../../components/BlockArticles";
+  import Pagination from "../../components/Pagination";
+
+    export default {
+        name: 'ArticleListPaginated',
+        components: {
+          BlockArticles,
+          Pagination
+        },
+        data: function() {
+          return {
+              articles: null,
+              page: null,
+              pagesNb: null
+          }
+        },
+        async asyncData ({ params, $http }) {
+            const perPage = process.env.ARTICLES_PER_PAGE;
+            let page = parseInt(params.page);
+            let start = page * perPage - perPage;
+
+            let articles = await $http.$get(process.env.STRAPI_BACK_URL + '/articles?_limit=' + perPage + '&_start=' + start);
+            let articlesNb = await $http.$get(process.env.STRAPI_BACK_URL + '/articles/count');
+
+            let pagesNb = Math.ceil(articlesNb/perPage);
+
+            return { articles, page, pagesNb }
+        }
+    }
+</script>

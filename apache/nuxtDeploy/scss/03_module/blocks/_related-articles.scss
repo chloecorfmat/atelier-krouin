@@ -1,0 +1,11 @@
+.block--related-articles {
+  padding-bottom: 1rem;
+
+  @include md {
+    padding-bottom: 3rem;
+  }
+
+  @include lg {
+    padding-bottom: 5rem;
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_component_paragraph_blocks",
+  "info": {
+    "name": "ParagraphBlock",
+    "icon": "square"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sub-component.image"
+    },
+    "image_size": {
+      "type": "enumeration",
+      "enum": [
+        "100%",
+        "50%",
+        "33%"
+      ]
+    },
+    "image_order": {
+      "type": "enumeration",
+      "enum": [
+        "before",
+        "after"
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sub_component_ctas",
+  "info": {
+    "name": "cta",
+    "icon": "hand-middle-finger"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_self",
+        "_blank"
+      ],
+      "required": true,
+      "default": "_self"
+    }
+  }
+}

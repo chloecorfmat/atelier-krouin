@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_component_instagram_blocks",
+  "info": {
+    "name": "InstagramBlock",
+    "icon": "photo-video"
+  },
+  "options": {},
+  "attributes": {
+    "insta_text": {
+      "type": "text",
+      "required": true
+    },
+    "insta_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "insta_url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

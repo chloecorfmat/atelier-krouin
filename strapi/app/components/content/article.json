@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_content_articles",
+  "info": {
+    "name": "Article",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "ColoredBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.colored-block"
+    },
+    "CtaBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.cta-block"
+    },
+    "ParagraphBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.paragraph-block"
+    }
+  }
+}

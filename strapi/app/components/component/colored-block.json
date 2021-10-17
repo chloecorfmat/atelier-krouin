@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_component_colored_blocks",
+  "info": {
+    "name": "ColoredBlock",
+    "icon": "square"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sub-component.cta"
+    }
+  }
+}

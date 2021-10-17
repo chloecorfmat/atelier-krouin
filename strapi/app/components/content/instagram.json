@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_content_instagrams",
+  "info": {
+    "name": "Instagram",
+    "icon": "images",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image_instagram": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "url_instagram": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

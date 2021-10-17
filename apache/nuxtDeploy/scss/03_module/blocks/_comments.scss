@@ -1,0 +1,59 @@
+/** BLOCK COMMENTS **/
+/* Use in article */
+
+.block--comments {
+  background: $primary-color;
+  margin-top: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column-reverse;
+
+  .comments--text {
+    color: $white;
+    font-family: $varela-round;
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+
+  .comments--title {
+    color: $white;
+    padding-top: 2rem;
+  }
+
+  .item--instagram {
+      margin: auto;
+
+      @include md {
+        width: 35%;
+        margin: 0;
+      }
+
+      @include lg {
+        width: 30%;
+      }
+    }
+
+  @include md {
+    padding: 2rem 3rem;
+    margin-top: 3rem;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .comments--title {
+      padding-top: 0;
+    }
+
+    .comments--content {
+      width: 55%;
+    }
+  }
+
+  @include lg {
+    padding: 2rem 10rem;
+    margin-top: 5rem;
+
+    .comments--content {
+      width: 50%;
+    }
+  }
+}

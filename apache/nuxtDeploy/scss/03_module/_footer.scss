@@ -1,0 +1,70 @@
+/** FOOTER **/
+
+.footer {
+  background: $text-color;
+  color: $white;
+
+  &--description {
+    .footer--title {
+      color: $white;
+      font-family: $modernline;
+    }
+
+    &-text {
+      color: $lightgrey;
+      display: inline-block;
+      font-family: $varela-round;
+      font-size: .8rem;
+      margin: 1.5rem 0;
+    }
+  }
+
+  &--rights {
+    color: $lightgrey;
+    font-family: $varela-round;
+    font-size: .8rem;
+  }
+
+  .menu--legal-infos--item:not(:first-child)::before {
+    content: "|";
+    color:$lightgrey;
+    font-size: .8rem;
+    margin: 0 .5rem;
+  }
+
+  .menu--contact--item {
+    font-size: .8rem;
+  }
+
+  .menu--social-media-footer {
+    &--item {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &--subtitle {
+    color: $white;
+    display: inline-block;
+    font-family: $varela-round;
+    font-size: 1.2rem;
+    text-transform: initial;
+  }
+
+  &--link {
+    color: $lightgrey;
+    font-size: .8rem;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: underline;
+    }
+
+    &--social {
+      font-size: 1rem;
+    }
+  }
+}

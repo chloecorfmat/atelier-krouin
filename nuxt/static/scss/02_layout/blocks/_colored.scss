@@ -1,0 +1,15 @@
+/** BLOCK COLORED **/
+/* Use in article */
+
+.block--colored {
+  margin: 1rem 2rem 0;
+  padding: 2rem;
+
+  @include md {
+    margin: 3rem 3rem 0;
+  }
+
+  @include lg {
+    margin: 5rem 10rem 0;
+  }
+}

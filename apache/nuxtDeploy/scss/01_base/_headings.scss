@@ -1,0 +1,17 @@
+/** HEADINGS **/
+
+h2,
+.h2-like {
+  color: $secondary-color;
+  font-family: $kumbh-sans;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2;
+  text-transform: uppercase;
+}
+
+.heading--with-tag {
+  display: inline-block;
+  vertical-align: sub;
+  margin-right: 2rem;
+}
