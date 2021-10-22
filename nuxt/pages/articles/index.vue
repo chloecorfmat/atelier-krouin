@@ -3,7 +3,7 @@
     <div class="block block--last-articles">
       <h1 class="h2-like heading--with-tag">Tous les articles</h1>
       <BlockArticles v-if="articles != null" :articles="articles" />
-      <Pagination :page="page" :pagesNb="pagesNb" baseUrl="/articles/"/>
+      <Pagination :page="page" :pagesNb="pagesNb" v-if="pagesNb > 1" baseUrl="/articles/"/>
     </div>
   </main>
 </template>
@@ -29,7 +29,7 @@
           const page = 1;
           let start = page * perPage - (perPage-1);
 
-          let articles = await $http.$get(process.env.STRAPI_BACK_URL + '/articles?_limit=' + perPage);
+          let articles = await $http.$get(process.env.STRAPI_BACK_URL + '/articles?_limit=' + perPage + '&_sort=published_at:DESC');
           let articlesNb = await $http.$get(process.env.STRAPI_BACK_URL + '/articles/count');
 
           let pagesNb = Math.ceil(articlesNb/perPage);

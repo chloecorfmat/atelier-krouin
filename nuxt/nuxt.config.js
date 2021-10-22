@@ -5,7 +5,7 @@ export default {
   target: 'static',
 
   env: {
-    STRAPI_BACK_URL: 'http://192.168.1.22:1337',
+    STRAPI_BACK_URL: 'http://192.168.1.12:1337',
     ARTICLES_PER_PAGE: 8
   },
 
@@ -61,19 +61,31 @@ export default {
   build: {
   },
   generate: {
+    crawler: false,
     async routes() {
       let routes = [];
-      let articles = await axios.get('http://192.168.1.22:1337' + '/articles');
+      let articles = await axios.get('http://192.168.1.12:1337' + '/articles');
 
       articles.data.forEach(element => {
         routes.push('/article/'+element.slug);
       });
 
-      let categories = await axios.get('http://192.168.1.22:1337' + '/categories');
+      let categories = await axios.get('http://192.168.1.12:1337' + '/categories');
 
       categories.data.forEach(element => {
         routes.push('/categories/'+element.slug_categorie);
       });
+
+      let perPage = 8;
+      let nbArticles = await axios.get('http://192.168.1.12:1337' + '/articles/count');
+      console.log(nbArticles);
+      let nbPages = Math.ceil(parseInt(nbArticles.data)/perPage);
+
+      for (let i = 1; i <= nbPages; i++) {
+        routes.push('/articles/' + i);
+      }
+
+      console.log(routes);
 
       return routes;
     }

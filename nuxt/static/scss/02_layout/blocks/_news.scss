@@ -12,6 +12,11 @@
     &--tag {
       order: 1;
       width: 100%;
+
+      .tag {
+        font-size: .9rem;
+        margin-bottom: .5rem;
+      }
     }
 
     &--infos {
@@ -49,6 +54,16 @@
     @include lg {
       flex-direction: row;
       flex-wrap: wrap;
+    }
+
+    .article--image--container {
+      position: relative;
+
+      .tag {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+      }
     }
   }
 

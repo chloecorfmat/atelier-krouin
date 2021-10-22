@@ -3,3 +3,4 @@ node_modules
 dist
 strapi/data
 nuxtDeploy
+.DS_Store

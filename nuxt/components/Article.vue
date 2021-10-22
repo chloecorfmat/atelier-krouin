@@ -5,9 +5,9 @@
         <img class="article--image" :src="imgUrl" :alt="this.article.image_header.alt" />
       </div>
       <div class="article--infos">
-        <span v-if="tag != ''" class="tag tag--primary">{{ tag }}</span>
         <h3 class="article--title">{{ article.title }}</h3>
         <time class="article--time" :datetime="article.published_at">{{ date }}</time>
+        <span v-if="tag != ''" class="tag tag--primary">{{ tag }}</span>
       </div>
     </NuxtLink>
   </li>

@@ -29,7 +29,7 @@
             let page = parseInt(params.page);
             let start = page * perPage - perPage;
 
-            let articles = await $http.$get(process.env.STRAPI_BACK_URL + '/articles?_limit=' + perPage + '&_start=' + start);
+            let articles = await $http.$get(process.env.STRAPI_BACK_URL + '/articles?_limit=' + perPage + '&_start=' + start + '&_sort=published_at:DESC');
             let articlesNb = await $http.$get(process.env.STRAPI_BACK_URL + '/articles/count');
 
             let pagesNb = Math.ceil(articlesNb/perPage);

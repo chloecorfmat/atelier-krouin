@@ -19,7 +19,7 @@
           <p class="pagination--item--link tag tag--secondary tag--inline" aria-current="page">{{ page }}</p>
         </li>
 
-        <li v-show="(page == 1 && pagesNb != 1) || (page < pagesNb-1)" class="pagination--item">
+        <li v-show="(page == 1 && pagesNb > 2) || (page < pagesNb-1)" class="pagination--item">
           ...
         </li>
 

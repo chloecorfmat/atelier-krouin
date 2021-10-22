@@ -4,9 +4,6 @@
     <div class="news--pseudo">
       <h2>À la Une</h2>
       <article class="article">
-        <div class="article--tag">
-          <span class="tag tag--primary">{{ news.categories[0].name}}</span>
-        </div>
         <div class="article--infos">
           <h3 class="article--title">{{ news.title }}</h3>
           <time :datetime="news.published_at" class="article--time">{{ date }}</time>
@@ -16,6 +13,9 @@
           <NuxtLink :to="url" class="btn--secondary tag tag--secondary article--link">Lire l'article</NuxtLink>
         </div>
         <div class="article--image--container">
+          <div class="article--tag">
+            <span class="tag tag--primary">{{ news.categories[0].name}}</span>
+          </div>
           <img class="article--image" :src="imgUrl" :alt="news.image_header.alt" />
         </div>
       </article>
