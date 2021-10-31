@@ -74,7 +74,7 @@ export default {
   build: {
   },
   sitemap: {
-
+    hostname: 'https://blog.atelierkrouin.fr'
   },
   robots: {
     UserAgent: '*',
