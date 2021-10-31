@@ -12,8 +12,9 @@ services:
       - web
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.blog.rule=Host(`blog.atelierkrouin.fr`)"
+      - "traefik.http.routers.blog.rule=Host(`blog.atelierkrouin.fr`, `atelierkrouin.fr`)"
       - "traefik.http.routers.blog.entrypoints=websecure"
+      - "traefik.http.routers.blog.middlewares=blogredirect"
   webhook:
     restart: always
     build:

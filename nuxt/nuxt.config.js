@@ -5,7 +5,7 @@ export default {
   target: 'static',
 
   env: {
-    STRAPI_BACK_URL: 'http://192.168.1.14:1337',
+    STRAPI_BACK_URL: 'https://strapi.atelierkrouin.fr',
     ARTICLES_PER_PAGE: 8
   },
 
@@ -40,7 +40,7 @@ export default {
       { rel: 'stylesheet', href: '/css/styles.css' },
     ],
     script: [
-      //{ hid: 'analytics', src: 'https://analytics.chloecorfmat.me/js/plausible.js', "data-domain": "atelierkrouin.fr", async: true, defer: true}
+      { hid: 'analytics', src: 'https://analytics.chloecorfmat.me/js/plausible.js', "data-domain": "atelierkrouin.fr", async: true, defer: true}
     ]
   },
 
@@ -85,20 +85,20 @@ export default {
     crawler: false,
     async routes() {
       let routes = [];
-      let articles = await axios.get('http://192.168.1.14:1337' + '/articles');
+      let articles = await axios.get('https://strapi.atelierkrouin.fr' + '/articles');
 
       articles.data.forEach(element => {
         routes.push('/article/'+element.slug);
       });
 
-      let categories = await axios.get('http://192.168.1.14:1337' + '/categories');
+      let categories = await axios.get('https://strapi.atelierkrouin.fr' + '/categories');
 
       categories.data.forEach(element => {
         routes.push('/categories/'+element.slug_categorie);
       });
 
       let perPage = 8;
-      let nbArticles = await axios.get('http://192.168.1.14:1337' + '/articles/count');
+      let nbArticles = await axios.get('https://strapi.atelierkrouin.fr' + '/articles/count');
       let nbPages = Math.ceil(parseInt(nbArticles.data)/perPage);
 
       for (let i = 1; i <= nbPages; i++) {
