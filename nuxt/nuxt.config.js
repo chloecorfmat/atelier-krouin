@@ -79,7 +79,7 @@ export default {
   robots: {
     UserAgent: '*',
     Disallow: '',
-    Sitemap: (req) => `https://${req.headers.host}/sitemap.xml`
+    Sitemap: (req) => `https://blog.atelierkrouin.fr/sitemap.xml`
   },
   generate: {
     crawler: false,
