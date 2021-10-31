@@ -7,6 +7,14 @@ services:
       - ./apache/nuxtDeploy/:/usr/local/apache2/htdocs/
     ports:
       - 8091:80
+    networks:
+      - default
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.blog.rule=Host(`blog.atelierkrouin.fr`, `atelierkrouin.fr`)"
+      - "traefik.http.routers.blog.entrypoints=websecure"
+      - "traefik.http.routers.blog.middlewares=blogredirect"
   webhook:
     restart: always
     build:
@@ -30,6 +38,13 @@ services:
       - '1337:1337'
     depends_on:
       - mariadb
+    networks:
+      - default
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.strapi.rule=Host(`strapi.atelierkrouin.fr`)"
+      - "traefik.http.routers.strapi.entrypoints=websecure"
   mariadb:
     image: mariadb
     volumes:
@@ -39,3 +54,7 @@ services:
       MYSQL_DATABASE: krouin
       MYSQL_USER: chloe
       MYSQL_PASSWORD: pass;1234
+
+networks:
+  web:
+    external: true
