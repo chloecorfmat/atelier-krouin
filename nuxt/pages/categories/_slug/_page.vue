@@ -34,17 +34,26 @@
             const perPage = process.env.ARTICLES_PER_PAGE;
             let page = parseInt(params.page);
             let start = page * perPage - perPage;
-            console.log(start)
 
-            let articles = await $http.$get(process.env.STRAPI_BACK_URL + '/articles?categories_contains=' + categorie.id + '&_limit=' + perPage + '&_start=' + start);
+            let articles = await $http.$get(process.env.STRAPI_BACK_URL + '/articles?categories_contains=' + categorie.id + '&_limit=' + perPage + '&_start=' + start + '&_sort=published_at:DESC');
             let articlesNb = await $http.$get(process.env.STRAPI_BACK_URL + '/articles/count?categories_contains=' + categorie.id);
 
             let pagesNb = Math.ceil(articlesNb/perPage);
             let baseUrl = '/categories/' + params.slug + '/';
 
-            console.log(articles);
-
             return { categorie, articles, page, pagesNb, baseUrl }
         },
+        head() {
+          return {
+            title: this.categorie.SEO.metatitle + ', page ' + this.page + ' | Atelier Krouiñ',
+            meta: [
+              {
+                hid: 'description',
+                name: 'description',
+                content: this.categorie.SEO.metadescription + ' (page ' + this.page + ')'
+              }
+            ]
+          }
+        }
     }
 </script>

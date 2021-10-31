@@ -18,6 +18,12 @@
       "type": "string",
       "unique": true,
       "required": true
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo",
+      "required": true
     }
   }
 }

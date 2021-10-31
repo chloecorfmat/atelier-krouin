@@ -6249,7 +6249,12 @@ p {
 }
 
 a {
+  text-decoration: underline;
+  color: #7E617C;
+}
+a:hover, a:focus {
   text-decoration: none;
+  color: #DB8783;
 }
 
 /** LAYOUT **/
@@ -6278,6 +6283,9 @@ a {
 /** FOOTER **/
 .footer {
   padding: 1rem 2rem;
+}
+.footer a {
+  text-decoration: none;
 }
 .footer--legal-infos {
   margin-top: 2rem;
@@ -6341,6 +6349,9 @@ a {
 }
 .header--link--social {
   font-size: 1.2rem;
+}
+.header a {
+  text-decoration: none;
 }
 .header .menu--navigation--nav {
   margin-top: 1rem;
@@ -6504,12 +6515,11 @@ a {
   }
 }
 .list--articles-item {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 @media (min-width: 1200px) {
   .list--articles-item {
-    height: 23rem;
+    max-height: 23rem;
   }
   .list--articles-item--container {
     display: flex;
@@ -6521,8 +6531,8 @@ a {
 @media (min-width: 1200px) {
   .list--articles {
     display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
+    gap: 0 2%;
+    grid-template-columns: minmax(auto, 32%) minmax(auto, 32%) minmax(auto, 32%);
   }
 }
 
@@ -6539,6 +6549,10 @@ a {
 .block.news .article--tag {
   order: 1;
   width: 100%;
+}
+.block.news .article--tag .tag {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 .block.news .article--infos {
   order: 2;
@@ -6578,6 +6592,14 @@ a {
     flex-wrap: wrap;
   }
 }
+.block.news .article .article--image--container {
+  position: relative;
+}
+.block.news .article .article--image--container .tag {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
 @media (min-width: 992px) {
   .block.news .news--pseudo::before {
     content: " ";
@@ -6616,13 +6638,12 @@ a {
   display: block;
   font-family: "Varela Round", sans-serif;
   text-transform: uppercase;
+  margin-bottom: 1.2rem;
 }
 .article--title {
   color: #0D213F;
   font-family: "Varela Round", sans-serif;
-}
-.article--tag {
-  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
 }
 .article--image {
   object-fit: cover;
@@ -6732,7 +6753,7 @@ a {
 .logo-text {
   color: #DB8783;
   font-family: "modernline", cursive;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-align: center;
   text-decoration: none;
   text-transform: capitalize;
@@ -6758,7 +6779,7 @@ a {
   color: #FFF;
   display: inline-block;
   font-family: "Kumbh Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.5;
   padding: 0.2rem 0.5rem;
@@ -6780,9 +6801,24 @@ a {
 }
 
 a.tag {
+  text-decoration: none;
+}
+a.tag:not(.on-image) {
   margin-bottom: 1rem;
   margin-top: 1rem;
-  text-decoration: none;
+}
+a.tag--primary:hover, a.tag--primary:focus {
+  background: #7E617C;
+  color: #FFF;
+  text-decoration: underline;
+}
+a.tag--secondary:hover, a.tag--secondary:focus {
+  background: #DB8783;
+  color: #FFF;
+  text-decoration: underline;
+}
+a.tag--reverse:hover, a.tag--reverse:focus {
+  text-decoration: underline;
 }
 
 .wysiwyg strong {
@@ -6818,6 +6854,7 @@ a.tag {
 }
 .block--comments .item--instagram {
   margin: auto;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .block--comments .item--instagram {
@@ -6862,7 +6899,6 @@ a.tag {
   background: #FFF;
   padding: 0.5rem 0;
   border-radius: 15px;
-  border: 3px solid #FFF;
   display: block;
 }
 .item--instagram-profile {
@@ -6931,6 +6967,9 @@ a.tag {
 
 /** BLOCK LIST ARTICLES **/
 /* Use in homepage */
+.list--articles:not(.list--articles--in-page) .list--articles-item:first-child {
+  padding-bottom: 0;
+}
 .list--articles:not(.list--articles--in-page) .list--articles-item:first-child .article--image--container {
   border-top-left-radius: 8px;
   border-top-right-radius: 0;
@@ -6940,6 +6979,18 @@ a.tag {
 .list--articles-item {
   background: #FFF;
   border-radius: 8px;
+  position: relative;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
+}
+.list--articles-item a {
+  text-decoration: none;
+}
+.list--articles-item a:hover, .list--articles-item a:focus {
+  text-decoration: none;
+}
+.list--articles-item a:hover .article--title, .list--articles-item a:focus .article--title {
+  text-decoration: underline;
 }
 .list--articles-item .article--image--container {
   border-top-left-radius: 8px;
@@ -6947,8 +6998,14 @@ a.tag {
   border-bottom-left-radius: 0;
   overflow: hidden;
 }
+.list--articles-item .tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.9rem;
+}
 .list--articles .article--infos {
-  padding: 1rem;
+  padding: 0 1rem;
 }
 .list--articles .article--title {
   font-family: "Kumbh Sans", sans-serif;
@@ -6958,6 +7015,7 @@ a.tag {
 .list--articles .article--time {
   font-size: 0.9rem;
   margin-top: 0.5rem;
+  margin-bottom: 0;
 }
 .list--articles .article--description {
   margin-top: 1rem;

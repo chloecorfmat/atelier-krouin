@@ -6,15 +6,13 @@
     display: block;
     font-family: $varela-round;
     text-transform: uppercase;
+    margin-bottom: 1.2rem;
   }
 
   &--title {
     color: $text-color;
     font-family: $varela-round;
-  }
-
-  &--tag {
-    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
   }
 
   &--image {

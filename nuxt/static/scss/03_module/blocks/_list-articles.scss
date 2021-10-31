@@ -6,6 +6,8 @@
   &:not(.list--articles--in-page) {
     .list--articles-item {
       &:first-child {
+        padding-bottom: 0;
+
         .article--image--container {
           border-top-left-radius: 8px;
           border-top-right-radius: 0;
@@ -19,6 +21,22 @@
   &-item {
     background: $white;
     border-radius: 8px;
+    position: relative;
+    padding-bottom: 1rem;
+    box-sizing: border-box;
+
+    a {
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+
+        .article--title {
+          text-decoration: underline;
+        }
+      }
+    }
 
     .article--image--container {
       border-top-left-radius: 8px;
@@ -26,11 +44,18 @@
       border-bottom-left-radius: 0;
       overflow: hidden;
     }
+
+    .tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: .9rem;
+    }
   }
 
   .article {
     &--infos {
-      padding: 1rem;
+      padding: 0 1rem;
     }
 
     &--title {
@@ -42,6 +67,7 @@
     &--time {
       font-size: .9rem;
       margin-top: .5rem;
+      margin-bottom: 0;
     }
 
     &--description {

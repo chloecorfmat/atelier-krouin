@@ -1,9 +1,9 @@
 <template>
     <main class="content page--article">
-        <div class="block news">
+        <div v-if="article.image_header && article.image_header.media.formats.large" class="block news">
             <div class="news--pseudo">
                 <div class="article--image--container">
-                    <img v-if="article.image_header" :src="baseUrl + article.image_header.media.formats.large.url" class="article--image">
+                    <img :src="baseUrl + article.image_header.media.formats.large.url" class="article--image">
                 </div>
             </div>
         </div>
@@ -70,6 +70,18 @@
         computed: {
           baseUrl: function () {
             return process.env.STRAPI_BACK_URL;
+          }
+        },
+        head() {
+          return {
+            title: this.article.SEO.metatitle + ' | Atelier Krouiñ',
+            meta: [
+              {
+                hid: 'description',
+                name: 'description',
+                content: this.article.SEO.metadescription
+              }
+            ]
           }
         }
     }

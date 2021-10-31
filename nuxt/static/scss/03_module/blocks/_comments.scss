@@ -22,6 +22,7 @@
 
   .item--instagram {
       margin: auto;
+      width: 100%;
 
       @include md {
         width: 35%;

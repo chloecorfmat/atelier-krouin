@@ -5,9 +5,9 @@
         <img class="article--image" :src="imgUrl" :alt="this.article.image_header.alt" />
       </div>
       <div class="article--infos">
-        <span v-if="tag != ''" class="tag tag--primary">{{ tag }}</span>
         <h3 class="article--title">{{ article.title }}</h3>
         <time class="article--time" :datetime="article.published_at">{{ date }}</time>
+        <NuxtLink v-if="tagName != ''" class="tag tag--primary on-image" :to="'/categories/' + tagSlug">{{ tagName }}</NuxtLink>
       </div>
     </NuxtLink>
   </li>
@@ -21,7 +21,8 @@ export default {
     },
     data: function() {
       return {
-        tag: null,
+        tagName: null,
+        tagSlug: null
       }
     },
     computed: {
@@ -40,12 +41,15 @@ export default {
       if (this.article.categories == undefined) {
         let response = await this.$http.$get(process.env.STRAPI_BACK_URL + '/articles/' + this.article.id);
         if (response.categories == undefined) {
-          this.tag = "";
+          this.tagName = "";
+          this.tagSlug = "";
         } else {
-          this.tag = response.categories[0].name;
+          this.tagName = response.categories[0].name;
+          this.tagSlug = response.categories[0].slug_categorie;
         }
-      } else if (this.article.categories[0].name != 'undefined') {
-        this.tag = this.article.categories[0].name;
+      } else if (this.article.categories[0].name != 'undefined' && this.article.categories[0].slug_categorie != 'undefined') {
+        this.tagName = this.article.categories[0].name;
+        this.tagSlug = this.article.categories[0].slug_categorie;
       }
     }
 }

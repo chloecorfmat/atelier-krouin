@@ -8,7 +8,7 @@
   color: $white;
   display: inline-block;
   font-family: $kumbh-sans;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.5;
   padding: .2rem .5rem;
@@ -34,7 +34,36 @@
 }
 
 a.tag {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
   text-decoration: none;
+
+  &:not(.on-image) {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  &--primary {
+    &:hover,
+    &:focus {
+      @include tagColor($secondary-color);
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  &--secondary {
+    &:hover,
+    &:focus {
+      @include tagColor($primary-color);
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  &--reverse {
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
 }
