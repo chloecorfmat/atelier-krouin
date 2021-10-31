@@ -35,6 +35,18 @@
             let pagesNb = Math.ceil(articlesNb/perPage);
 
             return { articles, page, pagesNb }
+        },
+        head() {
+          return {
+            title: 'Liste des articles, page ' + this.page +' | Atelier Krouiñ',
+            meta: [
+              {
+                hid: 'description',
+                name: 'description',
+                content: 'La liste des articles du blog Atelier Krouiñ (classés par ordre antéchronologique - page ' + this.page + ').'
+              }
+            ]
+          }
         }
     }
 </script>

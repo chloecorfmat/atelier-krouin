@@ -34,6 +34,18 @@
             let baseUrl = '/categories/' + params.slug + '/';
 
             return { categorie, articles, articlesNb, pagesNb, baseUrl }
+        },
+        head() {
+          return {
+            title: this.categorie.SEO.metatitle + ' | Atelier Krouiñ',
+            meta: [
+              {
+                hid: 'description',
+                name: 'description',
+                content: this.categorie.SEO.metadescription
+              }
+            ]
+          }
         }
     }
 </script>

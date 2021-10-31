@@ -13,5 +13,12 @@ p {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
+  color: $secondary-color;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $primary-color;
+  }
 }

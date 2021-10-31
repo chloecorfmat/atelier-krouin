@@ -6186,7 +6186,6 @@ table {
 /** COLORS **/
 /* All colors used in the theme */
 /* Main theme */
-/** V2 **/
 /** FONTS **/
 /* All fonts used in the theme */
 @font-face {
@@ -6250,7 +6249,12 @@ p {
 }
 
 a {
+  text-decoration: underline;
+  color: #7E617C;
+}
+a:hover, a:focus {
   text-decoration: none;
+  color: #DB8783;
 }
 
 /** LAYOUT **/
@@ -6279,6 +6283,9 @@ a {
 /** FOOTER **/
 .footer {
   padding: 1rem 2rem;
+}
+.footer a {
+  text-decoration: none;
 }
 .footer--legal-infos {
   margin-top: 2rem;
@@ -6342,6 +6349,9 @@ a {
 }
 .header--link--social {
   font-size: 1.2rem;
+}
+.header a {
+  text-decoration: none;
 }
 .header .menu--navigation--nav {
   margin-top: 1rem;
@@ -6791,9 +6801,24 @@ a {
 }
 
 a.tag {
+  text-decoration: none;
+}
+a.tag:not(.on-image) {
   margin-bottom: 1rem;
   margin-top: 1rem;
-  text-decoration: none;
+}
+a.tag--primary:hover, a.tag--primary:focus {
+  background: #7E617C;
+  color: #FFF;
+  text-decoration: underline;
+}
+a.tag--secondary:hover, a.tag--secondary:focus {
+  background: #DB8783;
+  color: #FFF;
+  text-decoration: underline;
+}
+a.tag--reverse:hover, a.tag--reverse:focus {
+  text-decoration: underline;
 }
 
 .wysiwyg strong {
@@ -6957,6 +6982,15 @@ a.tag {
   position: relative;
   padding-bottom: 1rem;
   box-sizing: border-box;
+}
+.list--articles-item a {
+  text-decoration: none;
+}
+.list--articles-item a:hover, .list--articles-item a:focus {
+  text-decoration: none;
+}
+.list--articles-item a:hover .article--title, .list--articles-item a:focus .article--title {
+  text-decoration: underline;
 }
 .list--articles-item .article--image--container {
   border-top-left-radius: 8px;

@@ -14,7 +14,7 @@
         </div>
         <div class="article--image--container">
           <div class="article--tag">
-            <span class="tag tag--primary">{{ news.categories[0].name}}</span>
+            <NuxtLink class="tag tag--primary on-image" :to="'/categories/' + news.categories[0].slug_categorie">{{ news.categories[0].name}}</NuxtLink>
           </div>
           <img class="article--image" :src="imgUrl" :alt="news.image_header.alt" />
         </div>

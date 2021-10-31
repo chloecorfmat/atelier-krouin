@@ -71,6 +71,18 @@
           baseUrl: function () {
             return process.env.STRAPI_BACK_URL;
           }
+        },
+        head() {
+          return {
+            title: this.article.SEO.metatitle + ' | Atelier Krouiñ',
+            meta: [
+              {
+                hid: 'description',
+                name: 'description',
+                content: this.article.SEO.metadescription
+              }
+            ]
+          }
         }
     }
 </script>

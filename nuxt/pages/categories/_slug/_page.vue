@@ -43,5 +43,17 @@
 
             return { categorie, articles, page, pagesNb, baseUrl }
         },
+        head() {
+          return {
+            title: this.categorie.SEO.metatitle + ', page ' + this.page + ' | Atelier Krouiñ',
+            meta: [
+              {
+                hid: 'description',
+                name: 'description',
+                content: this.categorie.SEO.metadescription + ' (page ' + this.page + ')'
+              }
+            ]
+          }
+        }
     }
 </script>

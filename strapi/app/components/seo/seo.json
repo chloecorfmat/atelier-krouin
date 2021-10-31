@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_seo_seos",
+  "info": {
+    "name": "SEO",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "metatitle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "metadescription": {
+      "type": "string",
+      "maxLength": 155,
+      "required": true,
+      "unique": true
+    }
+  }
+}

@@ -25,6 +25,19 @@
     padding-bottom: 1rem;
     box-sizing: border-box;
 
+    a {
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+
+        .article--title {
+          text-decoration: underline;
+        }
+      }
+    }
+
     .article--image--container {
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
