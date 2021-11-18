@@ -1,6 +1,6 @@
 <template>
   <li class="list--articles-item">
-    <NuxtLink class="list--articles-item--container" :to="url">
+    <a class="list--articles-item--container" :href="url">
       <div class="article--image--container">
         <img class="article--image" :src="imgUrl" :alt="this.article.image_header.alt" />
       </div>
@@ -9,7 +9,7 @@
         <time class="article--time" :datetime="article.published_at">{{ date }}</time>
         <NuxtLink v-if="tagName != ''" class="tag tag--primary on-image" :to="'/categories/' + tagSlug">{{ tagName }}</NuxtLink>
       </div>
-    </NuxtLink>
+    </a>
   </li>
 </template>
 
