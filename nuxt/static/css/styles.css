@@ -6499,6 +6499,12 @@ a:hover, a:focus {
 .list--articles:not(.list--articles--in-page) .list--articles-item:first-child .article--image {
   height: 100%;
 }
+.list--articles:not(.list--articles--in-page) .list--articles-item:first-child .article--description {
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .list--articles:not(.list--articles--in-page) .list--articles-item:first-child:not(:first-child) {
   height: 23rem;
 }
