@@ -2,7 +2,8 @@
   "collectionName": "components_sub_component_images",
   "info": {
     "name": "Image",
-    "icon": "image"
+    "icon": "image",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -21,6 +22,17 @@
     "legend": {
       "type": "string",
       "required": false
+    },
+    "centered_on": {
+      "type": "enumeration",
+      "enum": [
+        "top",
+        "bottom",
+        "middle"
+      ],
+      "required": true,
+      "unique": false,
+      "default": "middle"
     }
   }
 }
