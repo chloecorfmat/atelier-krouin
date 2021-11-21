@@ -6578,13 +6578,13 @@ a:hover, a:focus {
   display: flex;
   flex-direction: column;
 }
-.block.news .article--image--container .image-v-top {
+.block.news .article--image--container.image-v-top {
   justify-content: start;
 }
-.block.news .article--image--container .image-v-bottom {
+.block.news .article--image--container.image-v-bottom {
   justify-content: end;
 }
-.block.news .article--image--container .image-v-center {
+.block.news .article--image--container.image-v-middle {
   justify-content: center;
 }
 @media (min-width: 992px) {

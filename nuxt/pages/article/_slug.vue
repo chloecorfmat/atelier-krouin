@@ -2,7 +2,7 @@
     <main class="content page--article">
         <div v-if="article.image_header && article.image_header.media.formats.large" class="block news">
             <div class="news--pseudo">
-                <div class="article--image--container">
+                <div :class="'article--image--container image-v-' + article.image_header.centered_on ">
                     <img :src="baseUrl + article.image_header.media.formats.large.url" class="article--image">
                 </div>
             </div>

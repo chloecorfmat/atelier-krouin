@@ -37,15 +37,15 @@
       display: flex;
       flex-direction: column;
 
-      & .image-v-top {
+      &.image-v-top {
         justify-content: start;
       }
 
-      & .image-v-bottom {
+      &.image-v-bottom {
         justify-content: end;
       }
 
-      & .image-v-center {
+      &.image-v-middle {
         justify-content: center;
       }
 

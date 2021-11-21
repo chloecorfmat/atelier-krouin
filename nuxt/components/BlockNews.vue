@@ -12,7 +12,7 @@
           <p>{{ news.header }}</p>
           <NuxtLink :to="url" class="btn--secondary tag tag--secondary article--link">Lire l'article</NuxtLink>
         </div>
-        <div class="article--image--container">
+        <div :class="'article--image--container image-v-' + news.image_header.centered_on">
           <div class="article--tag">
             <NuxtLink class="tag tag--primary on-image" :to="'/categories/' + news.categories[0].slug_categorie">{{ news.categories[0].name}}</NuxtLink>
           </div>
