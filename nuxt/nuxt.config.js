@@ -40,7 +40,7 @@ export default {
       { rel: 'stylesheet', href: '/css/styles.css' },
     ],
     script: [
-      //{ hid: 'analytics', src: 'https://analytics.chloecorfmat.me/js/plausible.js', "data-domain": "atelierkrouin.fr", async: true, defer: true}
+      { hid: 'analytics', src: 'https://analytics.chloecorfmat.me/js/plausible.js', "data-domain": "atelierkrouin.fr", async: true, defer: true}
     ]
   },
 
