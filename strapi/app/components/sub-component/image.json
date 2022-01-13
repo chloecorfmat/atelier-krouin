@@ -17,7 +17,8 @@
       "required": true
     },
     "alt": {
-      "type": "string"
+      "type": "string",
+      "maxLength": 80
     },
     "legend": {
       "type": "string",
