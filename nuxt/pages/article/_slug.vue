@@ -17,14 +17,14 @@
         <div v-for="(block, index) in article.content" :key="index" class="block--container">
             <div v-if="block.ColoredBlock" class="block block--colored">
                 <h2 v-if="block.ColoredBlock.title">{{ block.ColoredBlock.title }}</h2>
-                <vue-markdown class="wysiwyg">{{ block.ColoredBlock.content }}</vue-markdown>
+                <div class="wysiwyg" v-html="block.ColoredBlock.content" />
                 <div v-if="block.ColoredBlock.cta">
                     <a :href="block.ColoredBlock.cta.url" :target="block.ColoredBlock.cta.target" class="tag tag--secondary article--link" >{{ block.ColoredBlock.cta.text }}</a>
                 </div>
             </div>
 
             <div v-if="block.CtaBlock" class="block block--cta">
-                <vue-markdown class="wysiwyg">{{ block.CtaBlock.content }}</vue-markdown>
+                <div class="wysiwyg" v-html="block.CtaBlock.content" />
                 <div v-if="block.CtaBlock.cta">
                     <a :href="block.CtaBlock.cta.url" :target="block.CtaBlock.cta.target" class="tag tag--secondary article--link" >{{ block.CtaBlock.cta.text }}</a>
                 </div>
@@ -44,7 +44,6 @@
     </main>
 </template>
 <script>
-    import VueMarkdown from 'vue-markdown';
     import Paragraph from "../../components/Paragraph";
     import BlockLinkedArticles from "../../components/BlockLinkedArticles";
     import BlockComments from "../../components/BlockComments";
@@ -52,7 +51,6 @@
     export default {
         name: 'Article',
         components: {
-            VueMarkdown,
             Paragraph,
             BlockLinkedArticles,
             BlockComments

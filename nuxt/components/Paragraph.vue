@@ -29,7 +29,7 @@
             <img class="image--paragraph" :src="baseUrl + paragraph.image.media.url" :alt="paragraph.image.alt">
         </div>
 
-        <vue-markdown class="wysiwyg">{{ paragraph.content }}</vue-markdown>
+        <div class="wysiwyg" v-html="paragraph.content" />
 
         <img v-if="paragraph.image_size == '100%' && paragraph.image_order == 'after'"
              class="image--100 " :src="baseUrl + paragraph.image.media.url" :alt="paragraph.image.alt"
@@ -38,13 +38,8 @@
 </template>
 
 <script>
-    import VueMarkdown from 'vue-markdown';
-
     export default {
         name: 'Paragraph',
-        components: {
-            VueMarkdown
-        },
         props: {
             paragraph: {},
         },
