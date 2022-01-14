@@ -35,14 +35,11 @@
       </div>
       <div class="footer--legal-infos">
           <p class="footer--rights">© 2021 Chloé Corfmat - Tous droits réservés</p>
-          <!--<ul class="menu--legal-infos">
-            <li class="menu--legal-infos--item">
-              <a href="" class="footer--link">Plan du site</a>
+          <ul class="menu--legal-infos">
+            <li v-for="item in menuLegalInformations.items" :key="item.id" class="menu--legal-infos--item">
+              <NuxtLink class="footer--link" :to="item.url">{{ item.text}}</NuxtLink>
             </li>
-            <li class="menu--legal-infos--item">
-              <a href="" class="footer--link">Politique de confidentialité</a>
-            </li>
-          </ul>-->
+          </ul>
       </div>
   </footer>
 </template>
@@ -53,7 +50,8 @@
         data: function () {
           return {
             menuProjects: {},
-            menuSocialMedia: {}
+            menuSocialMedia: {},
+            menuLegalInformations: {}
           }
         },
         async fetch () {
@@ -63,6 +61,9 @@
 
                 response = await this.$http.$get(process.env.STRAPI_BACK_URL + '/menu-social-media')
                 this.menuSocialMedia = response;
+
+                response = await this.$http.$get(process.env.STRAPI_BACK_URL + '/menu-legal-informations')
+                this.menuLegalInformations = response;
             } catch (error) {
                 console.log(error);
                 this.error = error;

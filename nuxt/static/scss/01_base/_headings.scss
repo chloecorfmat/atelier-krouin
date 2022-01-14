@@ -1,5 +1,14 @@
 /** HEADINGS **/
 
+h1,
+.h1-like {
+  color: $text-color;
+  font-family: $varela-round;
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
 h2,
 .h2-like {
   color: $secondary-color;

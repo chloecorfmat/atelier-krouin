@@ -6219,6 +6219,15 @@ table {
 /** BASE **/
 /* Use to define base styles (which use base selectors). */
 /** HEADINGS **/
+h1,
+.h1-like {
+  color: #0D213F;
+  font-family: "Varela Round", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
 h2,
 .h2-like {
   color: #7E617C;
@@ -6278,6 +6287,10 @@ a:hover, a:focus {
 /** CONTENT **/
 .content {
   background: #F5F5F5;
+}
+
+.page--legal-informations {
+  padding-bottom: 2rem;
 }
 
 /** FOOTER **/
