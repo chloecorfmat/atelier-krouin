@@ -12,7 +12,7 @@
 
         .article--description {
           display: -webkit-box;
-          -webkit-line-clamp: 9; // nb of lines.
+          -webkit-line-clamp: 5; // nb of lines.
           -webkit-box-orient: vertical;
           overflow: hidden;
         }

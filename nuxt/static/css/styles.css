@@ -6311,7 +6311,7 @@ a:hover, a:focus {
 }
 @media (min-width: 992px) {
   .block {
-    padding: 3rem 10rem 0;
+    padding: 3rem 13rem 0;
   }
 }
 
@@ -6364,7 +6364,7 @@ a:hover, a:focus {
     column-gap: 2rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 2rem 10rem;
+    padding: 2rem 13rem;
   }
   .footer--description {
     grid-column: 1/3;
@@ -6445,8 +6445,8 @@ a:hover, a:focus {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 13rem;
+    padding-right: 13rem;
   }
 }
 
@@ -6465,7 +6465,7 @@ a:hover, a:focus {
 }
 @media (min-width: 992px) {
   .block--colored {
-    margin: 5rem 10rem 0;
+    margin: 5rem 13rem 0;
   }
 }
 
@@ -6546,7 +6546,7 @@ a:hover, a:focus {
 }
 .list--articles:not(.list--articles--in-page) .list--articles-item:first-child .article--description {
   display: -webkit-box;
-  -webkit-line-clamp: 9;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -6688,7 +6688,7 @@ a:hover, a:focus {
 }
 @media (min-width: 992px) {
   .block--signature {
-    padding: 3rem 10rem 0;
+    padding: 3rem 13rem 0;
   }
 }
 
@@ -6960,7 +6960,7 @@ a.tag--reverse:hover, a.tag--reverse:focus {
 }
 @media (min-width: 992px) {
   .block--comments {
-    padding: 2rem 10rem;
+    padding: 2rem 13rem;
     margin-top: 5rem;
   }
   .block--comments .comments--content {
