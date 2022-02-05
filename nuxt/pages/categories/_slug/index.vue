@@ -2,7 +2,7 @@
   <main class="content page--list-articles">
     <div class="block block--last-articles">
       <h1 class="h2-like heading--with-tag">Tous les articles<span class="sr-only" aria-hidden="false"> de la catégorie {{ categorie.name }}</span></h1>
-      <span class="tag tag--primary tag--inline">{{ categorie.name }}</span>
+      <span class="tag tag--secondary tag--inline">{{ categorie.name }}</span>
       <BlockArticles v-if="articles != null" :articles="articles" />
       <Pagination :page="page" :pagesNb="pagesNb" v-if="pagesNb > 1" :baseUrl="baseUrl"/>
     </div>
