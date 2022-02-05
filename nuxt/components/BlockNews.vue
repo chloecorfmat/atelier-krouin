@@ -10,11 +10,11 @@
         </div>
         <div class="article--description">
           <p>{{ news.header }}</p>
-          <NuxtLink :to="url" class="btn--secondary tag tag--secondary article--link">Lire l'article</NuxtLink>
+          <NuxtLink :to="url" class="btn--secondary tag tag--primary article--link">Lire l'article</NuxtLink>
         </div>
         <div :class="'article--image--container image-v-' + news.image_header.centered_on">
           <div class="article--tag">
-            <NuxtLink class="tag tag--primary on-image" :to="'/categories/' + news.categories[0].slug_categorie">{{ news.categories[0].name}}</NuxtLink>
+            <NuxtLink class="tag tag--secondary on-image" :to="'/categories/' + news.categories[0].slug_categorie">{{ news.categories[0].name}}</NuxtLink>
           </div>
           <img class="article--image" :src="imgUrl" :alt="news.image_header.alt" />
         </div>
@@ -35,7 +35,8 @@
           },
           date: function () {
             let date = new Date(this.news.published_at);
-            return date.getDate() + ' ' + date.toLocaleString('default', { month: 'long' }) + ' ' + date.getFullYear() + ' à ' + date.getHours() + 'h' + date.getMinutes();
+            let minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+            return date.getDate() + ' ' + date.toLocaleString('default', { month: 'long' }) + ' ' + date.getFullYear() + ' à ' + date.getHours() + 'h' + minutes;
           },
           url: function() {
             return "article/" + this.news.slug;

@@ -7,7 +7,7 @@
       <div class="article--infos">
         <h3 class="article--title">{{ article.title }}</h3>
         <time class="article--time" :datetime="article.published_at">{{ date }}</time>
-        <NuxtLink v-if="tagName != ''" class="tag tag--primary on-image" :to="'/categories/' + tagSlug">{{ tagName }}</NuxtLink>
+        <NuxtLink v-if="tagName != ''" class="tag tag--secondary on-image" :to="'/categories/' + tagSlug">{{ tagName }}</NuxtLink>
       </div>
     </a>
   </li>
@@ -31,7 +31,8 @@ export default {
       },
       date: function () {
         let date = new Date(this.article.published_at);
-        return date.getDate() + ' ' + date.toLocaleString('default', { month: 'long' }) + ' ' + date.getFullYear() + ' à ' + date.getHours() + 'h' + date.getMinutes();
+        let minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+        return date.getDate() + ' ' + date.toLocaleString('default', { month: 'long' }) + ' ' + date.getFullYear() + ' à ' + date.getHours() + 'h' + minutes;
       },
       url: function() {
         return "/article/" + this.article.slug;

@@ -3,12 +3,12 @@
     <nav class="pagination--nav">
       <ul class="pagination">
         <li v-show="page != 1" class="pagination--item">
-          <NuxtLink class="btn--secondary tag tag--secondary tag--inline" :to="baseUrl + previousPage">
+          <NuxtLink class="btn--secondary tag tag--primary tag--inline" :to="baseUrl + previousPage">
             <span class="sr-only">Page </span>Précédente
           </NuxtLink>
         </li>
         <li v-show="page > 1" class="pagination--item">
-          <NuxtLink class="pagination--item--link btn--secondary tag tag--secondary tag--inline" :to="baseUrl + 1">1</NuxtLink>
+          <NuxtLink class="pagination--item--link btn--primary tag tag--primary tag--inline" :to="baseUrl + 1">1</NuxtLink>
         </li>
 
         <li v-show="page > 2" class="pagination--item">
@@ -16,7 +16,7 @@
         </li>
 
         <li class="pagination--item pagination--item--is-active">
-          <p class="pagination--item--link tag tag--secondary tag--inline" aria-current="page">{{ page }}</p>
+          <p class="pagination--item--link tag tag--primary tag--inline" aria-current="page">{{ page }}</p>
         </li>
 
         <li v-show="(page == 1 && pagesNb > 2) || (page < pagesNb-1)" class="pagination--item">
@@ -24,10 +24,10 @@
         </li>
 
         <li v-show="page < pagesNb" class="pagination--item">
-          <NuxtLink class="pagination--item--link btn--secondary tag tag--secondary tag--inline" :to="baseUrl + pagesNb">{{ pagesNb }}</NuxtLink>
+          <NuxtLink class="pagination--item--link btn--primary tag tag--primary tag--inline" :to="baseUrl + pagesNb">{{ pagesNb }}</NuxtLink>
         </li>
         <li v-show="page != pagesNb"class="pagination--item">
-          <NuxtLink class="pagination--item--link btn--secondary tag tag--secondary tag--inline" :to="baseUrl + nextPage">
+          <NuxtLink class="pagination--item--link btn--primary tag tag--primary tag--inline" :to="baseUrl + nextPage">
             <span class="sr-only">Page </span>Suivante
           </NuxtLink>
         </li>

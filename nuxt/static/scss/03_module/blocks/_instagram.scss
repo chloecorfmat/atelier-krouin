@@ -8,6 +8,7 @@
     padding: .5rem 0;
     border-radius: 15px;
     display: block;
+    text-decoration: none;
 
     &-profile {
       display: flex;
@@ -26,7 +27,7 @@
 
     &-username {
       color: $black;
-      font-size: .9rem;
+      font-size: 1rem;
     }
 
     &-image {

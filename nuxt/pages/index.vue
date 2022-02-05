@@ -9,7 +9,7 @@
       <h2>Derniers articles</h2>
       <BlockArticles v-if="articles != null" :articles="lastArticles" />
       <div class="btn--container">
-        <NuxtLink class="btn--secondary tag tag--secondary" to="/articles">Voir plus d'articles</NuxtLink>
+        <NuxtLink class="btn--secondary tag tag--primary" to="/articles">Voir plus d'articles</NuxtLink>
       </div>
     </div>
 

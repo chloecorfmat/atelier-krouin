@@ -4,14 +4,14 @@
 .pagination {
   text-align: center;
   &--item {
-    color: $secondary-color;
+    color: $primary-color;
     display: inline-block;
 
     &--is-active {
       .pagination--item--link {
-        color: $secondary-color;
+        color: $primary-color;
         background: $white;
-        border: 2px solid $secondary-color;
+        border: 2px solid $primary-color;
       }
     }
   }

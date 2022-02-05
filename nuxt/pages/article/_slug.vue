@@ -9,7 +9,7 @@
         </div>
 
         <div class="block article--details article">
-            <span class="tag tag--primary">{{ article.categories[0].name }}</span>
+            <span class="tag tag--secondary">{{ article.categories[0].name }}</span>
             <h1 class="article--title">{{ article.title }}</h1>
             <p>{{ article.header }}</p>
         </div>

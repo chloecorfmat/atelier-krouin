@@ -13,27 +13,27 @@
     &-text {
       color: $lightgrey;
       display: inline-block;
-      font-family: $varela-round;
-      font-size: .8rem;
+      font-family: $source-sans-pro;
+      font-size: .9rem;
       margin: 1.5rem 0;
     }
   }
 
   &--rights {
     color: $lightgrey;
-    font-family: $varela-round;
-    font-size: .8rem;
+    font-family: $source-sans-pro;
+    font-size: .9rem;
   }
 
   .menu--legal-infos--item:not(:first-child)::before {
     content: "|";
     color:$lightgrey;
-    font-size: .8rem;
+    font-size: .9rem;
     margin: 0 .5rem;
   }
 
   .menu--contact--item {
-    font-size: .8rem;
+    font-size: .9rem;
   }
 
   .menu--social-media-footer {
@@ -49,14 +49,14 @@
   &--subtitle {
     color: $white;
     display: inline-block;
-    font-family: $varela-round;
+    font-family: $source-sans-pro;
     font-size: 1.2rem;
     text-transform: initial;
   }
 
   &--link {
     color: $lightgrey;
-    font-size: .8rem;
+    font-size: .9rem;
 
     &:hover {
       color: $primary-color;

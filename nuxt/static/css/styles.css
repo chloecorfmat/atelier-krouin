@@ -6189,22 +6189,48 @@ table {
 /** FONTS **/
 /* All fonts used in the theme */
 @font-face {
-  font-family: "Kumbh Sans";
-  font-weight: 400;
-  src: url("../fonts/Kumbh_Sans/KumbhSans-Regular.ttf");
-}
-@font-face {
-  font-family: "Kumbh Sans";
-  font-weight: 700;
-  src: url("../fonts/Kumbh_Sans/KumbhSans-Bold.ttf");
-}
-@font-face {
   font-family: "modernline";
   src: url("../fonts/modernline/modernline.otf");
 }
 @font-face {
-  font-family: "Varela Round";
-  src: url("../fonts/Varela_Round/VarelaRound-Regular.ttf");
+  font-family: "XCharter";
+  src: url("../fonts/XCharter/XCharter-Roman.otf");
+}
+@font-face {
+  font-family: "XCharter";
+  font-style: italic;
+  src: url("../fonts/XCharter/XCharter-Italic.otf");
+}
+@font-face {
+  font-family: "XCharter";
+  font-weight: 700;
+  src: url("../fonts/XCharter/XCharter-Bold.otf");
+}
+@font-face {
+  font-family: "XCharter";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/XCharter/XCharter-BoldItalic.otf");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("../fonts/SourceSansPro/SourceSansPro-Regular.ttf");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  src: url("../fonts/SourceSansPro/SourceSansPro-Italic.ttf");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: 700;
+  src: url("../fonts/SourceSansPro/SourceSansPro-Bold.ttf");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/SourceSansPro/SourceSansPro-BoldItalic.ttf");
 }
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -6218,11 +6244,16 @@ table {
 
 /** BASE **/
 /* Use to define base styles (which use base selectors). */
+/** BODY **/
+html {
+  font-size: 17px;
+}
+
 /** HEADINGS **/
 h1,
 .h1-like {
   color: #0D213F;
-  font-family: "Varela Round", sans-serif;
+  font-family: "XCharter", serif;
   font-size: 2.5rem;
   margin-bottom: 1.2rem;
   display: block;
@@ -6230,8 +6261,8 @@ h1,
 
 h2,
 .h2-like {
-  color: #7E617C;
-  font-family: "Kumbh Sans", sans-serif;
+  color: #ae325e;
+  font-family: "XCharter", serif;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 2;
@@ -6248,7 +6279,7 @@ h2,
 a,
 li,
 p {
-  font-family: "Varela Round", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1.2rem;
   line-height: 1.5;
 }
@@ -6259,11 +6290,11 @@ p {
 
 a {
   text-decoration: underline;
-  color: #7E617C;
+  color: #e85a22;
 }
 a:hover, a:focus {
   text-decoration: none;
-  color: #DB8783;
+  color: #ae325e;
 }
 
 /** LAYOUT **/
@@ -6286,7 +6317,7 @@ a:hover, a:focus {
 
 /** CONTENT **/
 .content {
-  background: #F5F5F5;
+  background: #fff8ec;
 }
 
 .page--legal-informations {
@@ -6346,22 +6377,23 @@ a:hover, a:focus {
 /** HEADER **/
 .header {
   background: #FFF;
-  border-top: 4px solid #DB8783;
+  border-top: 4px solid #ae325e;
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column-reverse;
 }
 .header--link {
   color: #0D213F;
-  font-family: "Varela Round", sans-serif;
-  font-size: 0.9rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
 }
 .header--link:hover {
-  color: #DB8783;
+  color: #ae325e;
   text-decoration: underline;
 }
 .header--link--social {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 .header a {
   text-decoration: none;
@@ -6633,7 +6665,7 @@ a:hover, a:focus {
 @media (min-width: 992px) {
   .block.news .news--pseudo::before {
     content: " ";
-    background: #DB8783;
+    background: #ae325e;
     width: 100%;
     height: 5rem;
     display: block;
@@ -6664,15 +6696,15 @@ a:hover, a:focus {
 /* Use to define components (one file per component). */
 /** ARTICLE **/
 .article--time {
-  color: #DB8783;
+  color: #ae325e;
   display: block;
-  font-family: "Varela Round", sans-serif;
+  font-family: "XCharter", serif;
   text-transform: uppercase;
   margin-bottom: 1.2rem;
 }
 .article--title {
   color: #0D213F;
-  font-family: "Varela Round", sans-serif;
+  font-family: "XCharter", serif;
   font-size: 1.4rem;
 }
 .article--image {
@@ -6713,25 +6745,25 @@ a:hover, a:focus {
   font-family: "modernline", cursive;
 }
 .footer--description-text {
-  color: #F5F5F5;
+  color: #fff8ec;
   display: inline-block;
-  font-family: "Varela Round", sans-serif;
-  font-size: 0.8rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
   margin: 1.5rem 0;
 }
 .footer--rights {
-  color: #F5F5F5;
-  font-family: "Varela Round", sans-serif;
-  font-size: 0.8rem;
+  color: #fff8ec;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
 }
 .footer .menu--legal-infos--item:not(:first-child)::before {
   content: "|";
-  color: #F5F5F5;
-  font-size: 0.8rem;
+  color: #fff8ec;
+  font-size: 0.9rem;
   margin: 0 0.5rem;
 }
 .footer .menu--contact--item {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 .footer .menu--social-media-footer--item {
   display: inline-block;
@@ -6742,16 +6774,16 @@ a:hover, a:focus {
 .footer--subtitle {
   color: #FFF;
   display: inline-block;
-  font-family: "Varela Round", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1.2rem;
   text-transform: initial;
 }
 .footer--link {
-  color: #F5F5F5;
-  font-size: 0.8rem;
+  color: #fff8ec;
+  font-size: 0.9rem;
 }
 .footer--link:hover {
-  color: #DB8783;
+  color: #ae325e;
   text-decoration: underline;
 }
 .footer--link--social {
@@ -6765,23 +6797,23 @@ a:hover, a:focus {
   width: 100%;
 }
 .btn--primary {
-  background: #DB8783;
+  background: #ae325e;
 }
 .btn--primary:hover {
-  background: #e6adab;
+  background: #cb4877;
   text-decoration: underline;
 }
 .btn--secondary {
-  background: #7E617C;
+  background: #e85a22;
 }
 .btn--secondary:hover {
-  background: #987a96;
+  background: #ed7c50;
   text-decoration: underline;
 }
 
 /** LOGO TEXT (in header) **/
 .logo-text {
-  color: #DB8783;
+  color: #ae325e;
   font-family: "modernline", cursive;
   font-size: 1.5rem;
   text-align: center;
@@ -6795,35 +6827,34 @@ a:hover, a:focus {
   text-align: center;
 }
 .pagination--item {
-  color: #7E617C;
+  color: #ae325e;
   display: inline-block;
 }
 .pagination--item--is-active .pagination--item--link {
-  color: #7E617C;
+  color: #ae325e;
   background: #FFF;
-  border: 2px solid #7E617C;
+  border: 2px solid #ae325e;
 }
 
 .tag {
   border-radius: 8px;
   color: #FFF;
   display: inline-block;
-  font-family: "Kumbh Sans", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1.1rem;
-  font-weight: 700;
   line-height: 1.5;
   padding: 0.2rem 0.5rem;
   vertical-align: middle;
 }
 .tag--primary {
-  background: #DB8783;
+  background: #ae325e;
 }
 .tag--secondary {
-  background: #7E617C;
+  background: #e85a22;
 }
 .tag--reverse {
   background: #FFF;
-  color: #DB8783;
+  color: #ae325e;
   font-weight: 500;
 }
 .tag--inline {
@@ -6838,12 +6869,12 @@ a.tag:not(.on-image) {
   margin-top: 1rem;
 }
 a.tag--primary:hover, a.tag--primary:focus {
-  background: #7E617C;
+  background: #e85a22;
   color: #FFF;
   text-decoration: underline;
 }
 a.tag--secondary:hover, a.tag--secondary:focus {
-  background: #DB8783;
+  background: #ae325e;
   color: #FFF;
   text-decoration: underline;
 }
@@ -6861,8 +6892,8 @@ a.tag--reverse:hover, a.tag--reverse:focus {
   margin: 0.5rem 0;
 }
 .wysiwyg h3 {
-  color: #7E617C;
-  font-family: "Kumbh Sans", sans-serif;
+  color: #e85a22;
+  font-family: "XCharter", serif;
   font-size: 1.4rem;
   font-weight: 700;
   line-height: 1;
@@ -6875,14 +6906,14 @@ a.tag--reverse:hover, a.tag--reverse:focus {
 /** BLOCK COLORED **/
 /* Use in article */
 .block--colored {
-  background: #E5E5E5;
+  background: #eadfd3;
   border-radius: 8px;
 }
 
 /** BLOCK COMMENTS **/
 /* Use in article */
 .block--comments {
-  background: #DB8783;
+  background: #ae325e;
   margin-top: 1rem;
   padding: 2rem;
   display: flex;
@@ -6890,7 +6921,7 @@ a.tag--reverse:hover, a.tag--reverse:focus {
 }
 .block--comments .comments--text {
   color: #FFF;
-  font-family: "Varela Round", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1.2rem;
   line-height: 1.8;
 }
@@ -6946,6 +6977,7 @@ a.tag--reverse:hover, a.tag--reverse:focus {
   padding: 0.5rem 0;
   border-radius: 15px;
   display: block;
+  text-decoration: none;
 }
 .item--instagram-profile {
   display: flex;
@@ -6962,7 +6994,7 @@ a.tag--reverse:hover, a.tag--reverse:focus {
 }
 .item--instagram-username {
   color: #000;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 .item--instagram-image {
   width: 100%;
@@ -6981,19 +7013,18 @@ a.tag--reverse:hover, a.tag--reverse:focus {
 
 /** INTRODUCING BLOCK **/
 .block--introducing {
-  background: #DB8783;
+  background: #ae325e;
   margin-top: 1rem;
 }
 .block--introducing .introducing--text {
   color: #FFF;
-  font-family: "Varela Round", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1.2rem;
   line-height: 1.8;
 }
 .block--introducing .introducing--signature {
   color: #FFF;
   font-family: "modernline", cursive;
-  margin-top: 2rem;
   text-align: right;
 }
 .block--introducing .introducing--image {
@@ -7054,7 +7085,7 @@ a.tag--reverse:hover, a.tag--reverse:focus {
   padding: 0 1rem;
 }
 .list--articles .article--title {
-  font-family: "Kumbh Sans", sans-serif;
+  font-family: "XCharter", serif;
   font-weight: 700;
   margin-top: 1rem;
 }
