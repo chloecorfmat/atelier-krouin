@@ -10,6 +10,9 @@
 
         <div class="block article--details article">
             <span class="tag tag--secondary">{{ article.categories[0].name }}</span>
+            <p class="article--time">
+              Publié le <time :datetime="article.published_at">{{ published_date }}</time><span v-if="updated_date">, Modifié le <time :datetime="article.updated_at">{{ updated_date }}</time></span>
+            </p>
             <h1 class="article--title">{{ article.title }}</h1>
             <p>{{ article.header }}</p>
         </div>
@@ -68,6 +71,24 @@
         computed: {
           baseUrl: function () {
             return process.env.STRAPI_BACK_URL;
+          },
+          published_date: function () {
+            let date = new Date(this.article.published_at);
+
+            let minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+            return date.getDate() + ' ' + date.toLocaleString('default', { month: 'long' }) + ' ' + date.getFullYear() + ' à ' + date.getHours() + 'h' + minutes;
+          },
+          updated_date: function () {
+            let published_date = new Date(this.article.published_at);
+            let updated_date = new Date(this.article.updated_at);
+
+            if (published_date < updated_date) {
+              let date = updated_date;
+              let minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+              return date.getDate() + ' ' + date.toLocaleString('default', { month: 'long' }) + ' ' + date.getFullYear() + ' à ' + date.getHours() + 'h' + minutes;
+            } else {
+              return false;
+            }
           }
         },
         head() {
