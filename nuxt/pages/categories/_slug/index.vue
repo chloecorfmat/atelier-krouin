@@ -1,8 +1,16 @@
 <template>
   <main class="content page--list-articles">
     <div class="block block--last-articles">
-      <h1 class="h2-like heading--with-tag">Tous les articles<span class="sr-only" aria-hidden="false"> de la catégorie {{ categorie.name }}</span></h1>
+      <h1 class="h2-like heading--with-tag">Tous les articles<span class="sr-only" aria-hidden="false"> de la catégorie {{ categorie.name }}</span> (page 1)</h1>
       <span class="tag tag--secondary tag--inline">{{ categorie.name }}</span>
+      <p class="list--articles-infos">
+        Affichage de {{ articlesNbDisplayed}}
+
+        <span v-if="articlesNbDisplayed > 1">articles</span>
+        <span v-else>article</span>
+
+         sur {{ articlesNb}} (page {{ page }} sur {{ pagesNb }})
+       </p>
       <BlockArticles v-if="articles != null" :articles="articles" />
       <Pagination :page="page" :pagesNb="pagesNb" v-if="pagesNb > 1" :baseUrl="baseUrl"/>
     </div>
@@ -19,7 +27,10 @@
         data: function() {
           return {
               categorie: null,
-              articles: null
+              articles: null,
+              page: 1,
+              articlesNbDisplayed: null,
+              articlesNb: null
           }
         },
         async asyncData ({ params, $http }) {
@@ -28,12 +39,13 @@
 
             const perPage = process.env.ARTICLES_PER_PAGE;
             let articles = await $http.$get(process.env.STRAPI_BACK_URL + '/articles?categories_contains=' + categorie.id + '&_sort=published_at:DESC');
+            let articlesNbDisplayed = Object.keys(articles).length;
             let articlesNb = await $http.$get(process.env.STRAPI_BACK_URL + '/articles/count?categories_contains=' + categorie.id);
 
             let pagesNb = Math.ceil(articlesNb/perPage);
             let baseUrl = '/categories/' + params.slug + '/';
 
-            return { categorie, articles, articlesNb, pagesNb, baseUrl }
+            return { categorie, articles, articlesNb, pagesNb, baseUrl, articlesNbDisplayed }
         },
         head() {
           return {

@@ -1,8 +1,16 @@
 <template>
   <main class="content page--list-articles">
     <div class="block block--last-articles">
-      <h1 class="h2-like heading--with-tag">Tous les articles<span class="sr-only" aria-hidden="false"> de la catégorie {{ categorie.name }}</span></h1>
+      <h1 class="h2-like heading--with-tag">Tous les articles<span class="sr-only" aria-hidden="false"> de la catégorie {{ categorie.name }}</span> (page {{ page }}) </h1>
       <span class="tag tag--secondary tag--inline">{{ categorie.name }}</span>
+      <p class="list--articles-infos">
+        Affichage de {{ articlesNbDisplayed}}
+
+        <span v-if="articlesNbDisplayed > 1">articles</span>
+        <span v-else>article</span>
+
+         sur {{ articlesNb}} (page {{ page }} sur {{ pagesNb }})
+       </p>
       <BlockArticles v-if="articles != null" :articles="articles" />
       <Pagination :page="page" :pagesNb="pagesNb" v-if="pagesNb > 1" :baseUrl="baseUrl"/>
     </div>
@@ -24,7 +32,9 @@
               articles: null,
               page: null,
               pagesNb: null,
-              baseUrl: null
+              baseUrl: null,
+              articlesNbDisplayed: null,
+              articlesNb: null
           }
         },
         async asyncData ({ params, $http }) {
@@ -36,12 +46,13 @@
             let start = page * perPage - perPage;
 
             let articles = await $http.$get(process.env.STRAPI_BACK_URL + '/articles?categories_contains=' + categorie.id + '&_limit=' + perPage + '&_start=' + start + '&_sort=published_at:DESC');
+            let articlesNbDisplayed = Object.keys(articles).length;
             let articlesNb = await $http.$get(process.env.STRAPI_BACK_URL + '/articles/count?categories_contains=' + categorie.id);
 
             let pagesNb = Math.ceil(articlesNb/perPage);
             let baseUrl = '/categories/' + params.slug + '/';
 
-            return { categorie, articles, page, pagesNb, baseUrl }
+            return { categorie, articles, page, pagesNb, baseUrl, articlesNbDisplayed, articlesNb }
         },
         head() {
           return {

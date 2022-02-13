@@ -85,19 +85,32 @@ export default {
     crawler: false,
     async routes() {
       let routes = [];
+      let perPage = 8;
+
       let articles = await axios.get('https://strapi.atelierkrouin.fr' + '/articles');
 
+      // Add each article.
       articles.data.forEach(element => {
         routes.push('/article/'+element.slug);
       });
 
       let categories = await axios.get('https://strapi.atelierkrouin.fr' + '/categories');
 
-      categories.data.forEach(element => {
+      // Add each categorie page (first one)
+      categories.data.forEach(async function (element) {
         routes.push('/categories/'+element.slug_categorie);
+
+        //@Todo : Add each page of categorie pages (depending on articles nb)
+        let nbArticles = await axios.get('https://strapi.atelierkrouin.fr' + '/articles/count?categories_contains=' + element.id);
+        let nbPages = Math.ceil(parseInt(nbArticles.data)/perPage);
+
+        for (let i = 1; i <= nbPages; i++) {
+          let path = '/categories/' + element.slug_categorie + '/' + i;
+          routes.push(path);
+        }
       });
 
-      let perPage = 8;
+      // Add each page of lists articles (depending on articles nb)
       let nbArticles = await axios.get('https://strapi.atelierkrouin.fr' + '/articles/count');
       let nbPages = Math.ceil(parseInt(nbArticles.data)/perPage);
 

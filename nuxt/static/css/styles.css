@@ -7044,6 +7044,13 @@ a.tag--reverse:hover, a.tag--reverse:focus {
 
 /** BLOCK LIST ARTICLES **/
 /* Use in homepage */
+.list--articles-infos {
+  font-family: "XCharter", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: right;
+  margin-bottom: 1rem;
+}
 .list--articles:not(.list--articles--in-page) .list--articles-item:first-child {
   padding-bottom: 0;
 }

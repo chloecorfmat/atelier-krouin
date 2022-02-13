@@ -3,6 +3,14 @@
 
 .list--articles {
 
+  &-infos {
+    font-family: $xcharter;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+
   &:not(.list--articles--in-page) {
     .list--articles-item {
       &:first-child {
