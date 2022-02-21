@@ -18,6 +18,10 @@ const TinyEditor = ({ onChange, name, value }) => {
               'code abbr formatselect | bold italic underline strikethrough | subscript superscript | numlist bullist | charmap emoticons | table | link codesample blockquote',
             ],
             menubar: false,
+            rel_list: [
+              {title: 'Empty value', value: ''},
+              {title: 'noreferrer noopener', value: 'noreferrer noopener'}
+            ],
             setup: function (editor) {
               let insertAbbr = function (editor, text, title) {
                 editor.undoManager.transact(function (){
