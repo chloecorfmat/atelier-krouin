@@ -5,6 +5,7 @@ services:
     image: httpd:2.4
     volumes:
       - ./apache/nuxtDeploy/:/usr/local/apache2/htdocs/
+      - ./.docker/apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
     ports:
       - 8091:80
     networks:
