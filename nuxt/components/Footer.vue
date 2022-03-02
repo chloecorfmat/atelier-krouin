@@ -6,7 +6,7 @@
           <nav>
             <ul class="menu--social-media-footer">
               <li v-for="item in menuSocialMedia.items" :key="item.id" class="menu--social-media-footer--item">
-                <a class="footer--link footer--link--social" :href="item.url" :aria-label="item.text" :target="item.target">
+                <a class="footer--link footer--link--social" :href="item.url" :aria-label="item.text" :target="item.target" :title="item.text + ' - Nouvelle fenêtre'" rel="noreferrer noopener">
                   <i aria-hidden="true" :class="item.icon"></i>
                 </a>
               </li>
@@ -17,7 +17,7 @@
           <h2 class="footer--subtitle">Autres projets</h2>
           <ul>
               <li v-for="project in menuProjects.items">
-                <a class="footer--link" :href="project.url" :target="project.target">{{ project.text }}</a>
+                <a class="footer--link" :href="project.url" :target="project.target" :title="project.text + ' - Nouvelle fenêtre'" rel="noreferrer noopener">{{ project.text }}</a>
               </li>
           </ul>
       </div>

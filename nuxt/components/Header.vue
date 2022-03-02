@@ -17,7 +17,7 @@
       <nav class="menu--social-media--nav">
           <ul class="menu--social-media">
             <li v-for="item in menuSocialMedia.items" :key="item.id" class="menu--social-media--item">
-              <a class="header--link header--link--social" :href="item.url" :aria-label="item.text" :target="item.target">
+              <a class="header--link header--link--social" :href="item.url" :aria-label="item.text" :target="item.target" :title="item.text + ' - Nouvelle fenêtre'" rel="noreferrer noopener">
                 <i aria-hidden="true" :class="item.icon"></i>
               </a>
             </li>

@@ -1,5 +1,5 @@
 <template>
-  <a :href="post_url" class="item--instagram" target="_blank">
+  <a :href="post_url" class="item--instagram" target="_blank" rel="noreferrer noopener">
     <div class="item--instagram-profile">
       <img src="/images/instagram.jpg" alt="Photo de profil Instagram de Atelier Krouiñ">
       <p class="item--instagram-username">atelierkrouin</p>
