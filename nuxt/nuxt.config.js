@@ -83,6 +83,7 @@ export default {
   },
   generate: {
     crawler: false,
+    fallback: true,
     async routes() {
       let routes = [];
       let perPage = 8;
