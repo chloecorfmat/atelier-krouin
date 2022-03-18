@@ -7042,6 +7042,13 @@ a.tag--reverse:hover, a.tag--reverse:focus {
   }
 }
 
+.block--linktree {
+  padding-bottom: 2rem;
+}
+.block--linktree .btn--container {
+  margin-bottom: 0 !important;
+}
+
 /** BLOCK LIST ARTICLES **/
 /* Use in homepage */
 .list--articles-infos {
