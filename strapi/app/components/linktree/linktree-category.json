@@ -2,7 +2,8 @@
   "collectionName": "components_linktree_linktree_categories",
   "info": {
     "name": "linktree_category",
-    "icon": "mouse-pointer"
+    "icon": "mouse-pointer",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,6 +15,9 @@
       "type": "component",
       "repeatable": true,
       "component": "linktree.linktree-link"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
