@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_linktree_linktree_links",
+  "info": {
+    "name": "linktree_link",
+    "icon": "mouse"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "external": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    }
+  }
+}

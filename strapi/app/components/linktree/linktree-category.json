@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_linktree_linktree_categories",
+  "info": {
+    "name": "linktree_category",
+    "icon": "mouse-pointer"
+  },
+  "options": {},
+  "attributes": {
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "linktree_link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "linktree.linktree-link"
+    }
+  }
+}
