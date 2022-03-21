@@ -1,8 +1,5 @@
-'use strict';
+// path: ./src/api/<content-type-name>/services/<service-name>.js
 
-/**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/concepts/services.html#core-services)
- * to customize this service
- */
+const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = {};
+module.exports = createCoreService('api::menu-legal-informations.menu-legal-informations');
