@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/linktree",
+      "handler": "linktree.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/linktree",
+      "handler": "linktree.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/linktree",
+      "handler": "linktree.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
