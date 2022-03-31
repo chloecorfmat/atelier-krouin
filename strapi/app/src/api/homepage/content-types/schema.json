@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "name": "Homepage",
+    "description": "",
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "instagram_posts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.instagram"
+    },
+    "legal_informations": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.paragraph-block"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "menu_social_medias",
+  "info": {
+    "name": "MenuSocialMedia",
+    "singularName": "menu-social-media",
+    "pluralName": "menus-social-media",
+    "displayName": "Menu social medias",
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "menu.menu-item",
+      "required": true
+    }
+  }
+}

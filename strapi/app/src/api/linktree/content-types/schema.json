@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "linktrees",
+  "info": {
+    "name": "Linktree",
+    "singularName": "linktree",
+    "pluralName": "linktrees",
+    "displayName": "Linktree",
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "linktree_category": {
+      "type": "component",
+      "repeatable": true,
+      "component": "linktree.linktree-category"
+    }
+  }
+}

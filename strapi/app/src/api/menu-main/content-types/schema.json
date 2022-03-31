@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "menu_mains",
+  "info": {
+    "name": "MenuMain",
+    "description": "",
+    "singularName": "menu-main",
+    "pluralName": "menus-main",
+    "displayName": "Menu Main",
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "categories": {
+      "type": "repation",
+      "relation": "oneToMany",
+      "target": "api::categorie.categorie"
+    }
+  }
+}

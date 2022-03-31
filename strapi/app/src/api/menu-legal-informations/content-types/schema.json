@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "menu_legal_informations",
+  "info": {
+    "name": "MenuLegalInformations",
+    "singularName": "menu-legal-informations",
+    "pluralName": "menus-legal-informations",
+    "displayName": "Menu Legal Informations",
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "menu.menu-item"
+    }
+  }
+}
