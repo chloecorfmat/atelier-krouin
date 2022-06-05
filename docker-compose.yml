@@ -7,11 +7,21 @@ services:
       - ./apache/nuxtDeploy/:/usr/local/apache2/htdocs/
       - ./.docker/apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
     ports:
-      - 8091:80
+      - 8093:80
     networks:
       - default
       - web
-
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.blog.rule=Host(`new.blog.atelierkrouin.fr`)"
+      - "traefik.http.routers.blog.entrypoints=websecure"
+  webhook:
+    restart: always
+    build:
+      context: ./webhook
+    volumes:
+      - ./apache/nuxtDeploy/:/opt/application/nuxtDeploy
+      - ./nuxt/:/opt/application/nuxtSource
   strapi:
     build:
       context: ./strapi/app
@@ -25,13 +35,16 @@ services:
     volumes:
       - ./strapi/app:/app
     ports:
-      - 1337:1337
+      - 1338:1337
     depends_on:
       - mariadb
     networks:
       - default
       - web
-
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.strapi.rule=Host(`new.strapi.atelierkrouin.fr`)"
+      - "traefik.http.routers.strapi.entrypoints=websecure"
   mariadb:
     image: mariadb
     volumes:

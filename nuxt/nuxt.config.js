@@ -6,7 +6,7 @@ export default {
 
   env: {
     //STRAPI_BACK_URL: 'https://strapi.atelierkrouin.fr',
-    STRAPI_BACK_URL: 'http://atelier-krouin.test:1337',
+    STRAPI_BACK_URL: 'http://atelier-krouin.test:1338',
     ARTICLES_PER_PAGE: 8
   },
 
