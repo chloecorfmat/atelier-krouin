@@ -13,8 +13,8 @@ services:
       - web
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.blog.rule=Host(`new.blog.atelierkrouin.fr`)"
-      - "traefik.http.routers.blog.entrypoints=websecure"
+      - "traefik.http.routers.blogv2.rule=Host(`new.blog.atelierkrouin.fr`)"
+      - "traefik.http.routers.blogv2.entrypoints=websecure"
   webhook:
     restart: always
     build:
@@ -43,8 +43,8 @@ services:
       - web
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.strapi.rule=Host(`new.strapi.atelierkrouin.fr`)"
-      - "traefik.http.routers.strapi.entrypoints=websecure"
+      - "traefik.http.routers.strapiv2.rule=Host(`new.strapi.atelierkrouin.fr`)"
+      - "traefik.http.routers.strapiv2.entrypoints=websecure"
   mariadb:
     image: mariadb
     volumes:
