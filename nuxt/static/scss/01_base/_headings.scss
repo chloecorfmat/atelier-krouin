@@ -1,0 +1,26 @@
+/** HEADINGS **/
+
+h1,
+.h1-like {
+  color: $text-color;
+  font-family: $xcharter;
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+h2,
+.h2-like {
+  color: $primary-color;
+  font-family: $xcharter;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2;
+  text-transform: uppercase;
+}
+
+.heading--with-tag {
+  display: inline-block;
+  vertical-align: sub;
+  margin-right: 2rem;
+}

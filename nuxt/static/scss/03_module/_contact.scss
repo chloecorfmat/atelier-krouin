@@ -1,0 +1,13 @@
+/** CONTACT **/
+
+.contact {
+  &--infos {
+    strong {
+      font-weight: 700;
+    }
+  }
+  &--list {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+}

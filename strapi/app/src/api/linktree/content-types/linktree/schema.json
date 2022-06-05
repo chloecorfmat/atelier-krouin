@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "linktrees",
+  "info": {
+    "singularName": "linktree",
+    "pluralName": "linktrees",
+    "displayName": "Linktree",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Categories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "linktree.categorie"
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "required": true
+    }
+  }
+}

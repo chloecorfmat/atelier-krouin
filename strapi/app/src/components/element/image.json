@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_element_images",
+  "info": {
+    "displayName": "Image",
+    "icon": "images",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "centered_on": {
+      "type": "enumeration",
+      "enum": [
+        "top",
+        "bottom",
+        "middle"
+      ],
+      "default": "middle",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,68 @@
+// Mixin tag.
+@mixin tagColor($color) {
+  background: $color;
+}
+
+.tag {
+  border-radius: 8px;
+  color: $white;
+  display: inline-block;
+  font-family: $source-sans-pro;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  padding: .2rem .5rem;
+  vertical-align: middle;
+
+  &--primary {
+    @include tagColor($primary-color);
+  }
+
+  &--secondary {
+    @include tagColor($secondary-color);
+  }
+
+  &--reverse {
+    @include tagColor($white);
+    color: $primary-color;
+    font-weight: 500;
+  }
+
+  &--inline {
+    display: inline-block;
+  }
+}
+
+a.tag {
+  text-decoration: none;
+
+  &:not(.on-image) {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  &--primary {
+    &:hover,
+    &:focus {
+      @include tagColor($secondary-color);
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  &--secondary {
+    &:hover,
+    &:focus {
+      @include tagColor($primary-color);
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  &--reverse {
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+}

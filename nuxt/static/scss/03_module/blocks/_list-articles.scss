@@ -1,0 +1,86 @@
+/** BLOCK LIST ARTICLES **/
+/* Use in homepage */
+
+.list--articles {
+
+  &-infos {
+    font-family: $xcharter;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+
+  &:not(.list--articles--in-page) {
+    .list--articles-item {
+      &:first-child {
+        padding-bottom: 0;
+
+        .article--image--container {
+          border-top-left-radius: 8px;
+          border-top-right-radius: 0;
+          border-bottom-left-radius: 8px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  &-item {
+    background: $white;
+    border-radius: 8px;
+    position: relative;
+    padding-bottom: 1rem;
+    box-sizing: border-box;
+
+    a {
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+
+        .article--title {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .article--image--container {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      border-bottom-left-radius: 0;
+      overflow: hidden;
+    }
+
+    .tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: .9rem;
+    }
+  }
+
+  .article {
+    &--infos {
+      padding: 0 1rem;
+    }
+
+    &--title {
+      font-family: $xcharter;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+
+    &--time {
+      font-size: .9rem;
+      margin-top: .5rem;
+      margin-bottom: 0;
+    }
+
+    &--description {
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+  }
+}

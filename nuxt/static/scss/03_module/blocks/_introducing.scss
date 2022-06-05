@@ -1,0 +1,32 @@
+/** INTRODUCING BLOCK **/
+
+.block--introducing {
+  background: $primary-color;
+  margin-top: 1rem;
+
+  .introducing--text {
+    color: $white;
+    font-family: $source-sans-pro;
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+
+  .introducing--signature {
+    color: $white;
+    font-family: $modernline;
+    text-align: right;
+  }
+
+  .introducing--image {
+    border-radius: 50%;
+    max-width: 200px;
+  }
+
+  @include md {
+    margin-top: 2rem;
+  }
+
+  @include lg {
+    margin-top: 3rem;
+  }
+}

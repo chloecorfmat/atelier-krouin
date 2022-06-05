@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "instagram": {
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage.instagram-post",
+      "max": 3,
+      "min": 1
+    }
+  }
+}

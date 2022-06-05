@@ -1,0 +1,113 @@
+/** FORM **/
+
+form {
+  .form-alert--required {
+    font-size: .9rem;
+    margin-bottom: 1rem;
+    text-align: right;
+
+    sup {
+      color: $berry;
+    }
+  }
+
+  fieldset {
+    display: block;
+
+    @include md {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .form-field {
+        width: 45%;
+      }
+    }
+  }
+
+  .form-field {
+    display: block;
+    margin-bottom: 1rem;
+
+    label {
+      display: block;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: .2rem;
+
+      sup {
+        color: $error;
+      }
+    }
+
+    input:not([type="submit"]),
+    textarea {
+      diplay: block;
+      width: 100%;
+      border-radius: 5px;
+      padding: .5rem .7rem;
+      line-height: 1.5;
+      font-size: .9rem;
+      border: 1px solid $mediumgrey;
+      font-family: $source-sans-pro;
+
+      &[aria-invalid="true"] {
+        border-color: $error;
+      }
+    }
+
+    .field-description {
+      font-size: 1rem;
+      padding-bottom: .3rem;
+    }
+
+    .field-error {
+      color: $error;
+      font-size: 1rem;
+    }
+  }
+
+  input[type="submit"] {
+    border: none;
+    line-height: 1.5rem;
+    padding: .5rem 2.5rem;
+    font-size: 1rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.form-message {
+  padding: 1rem;
+  color: $white;
+  border-radius: 5px;
+  margin: 3rem 0;
+
+  &.form-errors {
+    background-color: $error;
+  }
+
+  &.form-success {
+    background-color: $success;
+  }
+
+  &--title {
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+  }
+
+  &--error {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  &--success {
+    color: $white;
+  }
+}

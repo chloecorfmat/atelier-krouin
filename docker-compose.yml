@@ -1,0 +1,46 @@
+version: "3"
+services:
+  apache:
+    restart: always
+    image: httpd:2.4
+    volumes:
+      - ./apache/nuxtDeploy/:/usr/local/apache2/htdocs/
+      - ./.docker/apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
+    ports:
+      - 8091:80
+    networks:
+      - default
+      - web
+
+  strapi:
+    build:
+      context: ./strapi/app
+    environment:
+      DATABASE_CLIENT: mysql
+      DATABASE_HOST: mariadb
+      DATABASE_PORT: 3306
+      DATABASE_NAME: krouin
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: strapi
+    volumes:
+      - ./strapi/app:/app
+    ports:
+      - 1337:1337
+    depends_on:
+      - mariadb
+    networks:
+      - default
+      - web
+
+  mariadb:
+    image: mariadb
+    volumes:
+      - ./strapi/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: strapi
+      MYSQL_DATABASE: krouin
+      MYSQL_USER: chloe
+      MYSQL_PASSWORD: pass;1234
+networks:
+  web:
+    external: true

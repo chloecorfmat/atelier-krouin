@@ -1,0 +1,25 @@
+/** TEXTS **/
+
+a,
+label,
+li,
+p {
+  font-family: $source-sans-pro;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+p {
+  color: $text-color;
+}
+
+a {
+  text-decoration: underline;
+  color: $secondary-color;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $primary-color;
+  }
+}

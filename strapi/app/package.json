@@ -1,0 +1,37 @@
+{
+  "name": "app",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {
+    "webpack": "^5.71.0"
+  },
+  "dependencies": {
+    "@strapi/plugin-i18n": "4.1.7",
+    "@strapi/plugin-seo": "^1.7.2",
+    "@strapi/plugin-users-permissions": "4.1.7",
+    "@strapi/provider-email-nodemailer": "^4.1.12",
+    "@strapi/strapi": "4.1.7",
+    "@webbio/strapi-plugin-scheduler": "^0.1.0",
+    "mysql": "2.18.1",
+    "slugify": "^1.6.5",
+    "strapi-plugin-menus": "^0.2.4"
+  },
+  "author": {
+    "name": "Chloé Corfmat"
+  },
+  "strapi": {
+    "uuid": "27d741f3-0c01-42d3-9dce-8eacdc7da186"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

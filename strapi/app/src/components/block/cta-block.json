@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_block_cta_blocks",
+  "info": {
+    "displayName": "CTA block",
+    "icon": "hand-middle-finger",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext",
+      "required": false
+    },
+    "colored": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "element.cta"
+    }
+  }
+}

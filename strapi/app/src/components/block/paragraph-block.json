@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_block_paragraph_blocks",
+  "info": {
+    "displayName": "Paragraph block",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "element.image"
+    },
+    "image_size": {
+      "type": "enumeration",
+      "enum": [
+        "percent_100",
+        "percent_50",
+        "percent_33"
+      ]
+    },
+    "image_order": {
+      "type": "enumeration",
+      "enum": [
+        "before",
+        "after"
+      ]
+    }
+  }
+}

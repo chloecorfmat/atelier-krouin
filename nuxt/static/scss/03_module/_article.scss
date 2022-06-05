@@ -1,0 +1,47 @@
+/** ARTICLE **/
+
+.article {
+  &--time {
+    color: $primary-color;
+    display: block;
+    font-family: $xcharter;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+
+  &--title {
+    color: $text-color;
+    font-family: $xcharter;
+    font-size: 1.4rem;
+  }
+
+  &--image {
+    object-fit: cover;
+    width: 100%;
+
+    &--container {
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+
+  &--details {
+    padding-top: 2rem;
+
+    .tag {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.article {
+  .article--title {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .article--time {
+    font-size: 1.2rem;
+    margin: 1rem auto;
+  }
+}

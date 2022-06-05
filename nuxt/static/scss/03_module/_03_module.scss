@@ -1,0 +1,26 @@
+/** MODULES **/
+/* Use to define components (one file per component). */
+
+@import "article";
+@import "contact";
+@import "fa-icon";
+@import "footer";
+@import "link";
+@import "logo-text";
+@import "pagination";
+@import "tag";
+@import "wysiwyg";
+
+/** BLOCKS **/
+@import "blocks/colored";
+@import "blocks/comments";
+@import "blocks/instagram";
+@import "blocks/introducing";
+@import "blocks/linktree";
+@import "blocks/list-articles";
+@import "blocks/paragraphs";
+@import "blocks/related-articles";
+@import "blocks/signature";
+
+/** FORM **/
+@import "form/form";

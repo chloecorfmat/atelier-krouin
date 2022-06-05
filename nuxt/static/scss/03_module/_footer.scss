@@ -1,0 +1,78 @@
+/** FOOTER **/
+
+.footer {
+  background: $text-color;
+  color: $white;
+
+  &--description {
+    .footer--title {
+      color: $white;
+      font-family: $modernline;
+    }
+
+    .footer--subtitle {
+      color: $white;
+      font-family: $source-sans-pro;
+      font-size: 1rem;
+      margin-top: 1rem;
+      font-weight: 700;
+    }
+
+    &-text {
+      color: $white;
+      display: inline-block;
+      font-family: $source-sans-pro;
+      font-size: .9rem;
+      margin: 0 0 1.5rem 0;
+    }
+  }
+
+  &--rights {
+    color: $lightgrey;
+    font-family: $source-sans-pro;
+    font-size: .9rem;
+  }
+
+  .menu--legal-infos--item:not(:first-child)::before {
+    content: "|";
+    color:$lightgrey;
+    font-size: .9rem;
+    margin: 0 .5rem;
+  }
+
+  .menu--contact--item {
+    font-size: .9rem;
+  }
+
+  .menu--social-media-footer {
+    &--item {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &--subtitle {
+    color: $white;
+    display: inline-block;
+    font-family: $source-sans-pro;
+    font-size: 1.2rem;
+    text-transform: initial;
+  }
+
+  &--link {
+    color: $lightgrey;
+    font-size: .9rem;
+
+    &:hover {
+      color: $secondary-color;
+      text-decoration: underline;
+    }
+
+    &--social {
+      font-size: 1rem;
+    }
+  }
+}
