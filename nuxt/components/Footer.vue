@@ -26,7 +26,7 @@
           <h2 class="footer--subtitle">Contact</h2>
           <ul class="menu--contact">
               <li class="menu--contact--item">
-      <i class="fa-icon fas fa-envelope"></i><a class="footer--link" href="mailto:chloe@chloecorfmat.fr">chloe@chloecorfmat.fr</a>
+      <i class="fa-icon fas fa-envelope"></i><a class="footer--link" href="mailto:chloe@atelierkrouin.fr">chloe@atelierkrouin.fr</a>
     </li>
               <!--<li class="menu--contact--item">
       <a class="footer--link" href="#">Formulaire de contact</a>
