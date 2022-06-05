@@ -1,0 +1,59 @@
+version: "3"
+services:
+  apache:
+    restart: always
+    image: httpd:2.4
+    volumes:
+      - ./apache/nuxtDeploy/:/usr/local/apache2/htdocs/
+      - ./.docker/apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
+    ports:
+      - 8093:80
+    networks:
+      - default
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.blogv2.rule=Host(`new.blog.atelierkrouin.fr`)"
+      - "traefik.http.routers.blogv2.entrypoints=websecure"
+  webhook:
+    restart: always
+    build:
+      context: ./webhook
+    volumes:
+      - ./apache/nuxtDeploy/:/opt/application/nuxtDeploy
+      - ./nuxt/:/opt/application/nuxtSource
+  strapi:
+    build:
+      context: ./strapi/app
+    environment:
+      DATABASE_CLIENT: mysql
+      DATABASE_HOST: mariadb
+      DATABASE_PORT: 3306
+      DATABASE_NAME: krouin
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: strapi
+    volumes:
+      - ./strapi/app:/app
+    ports:
+      - 1338:1337
+    depends_on:
+      - mariadb
+    networks:
+      - default
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.strapiv2.rule=Host(`new.strapi.atelierkrouin.fr`)"
+      - "traefik.http.routers.strapiv2.entrypoints=websecure"
+  mariadb:
+    image: mariadb
+    volumes:
+      - ./strapi/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: strapi
+      MYSQL_DATABASE: krouin
+      MYSQL_USER: chloe
+      MYSQL_PASSWORD: pass;1234
+networks:
+  web:
+    external: true
