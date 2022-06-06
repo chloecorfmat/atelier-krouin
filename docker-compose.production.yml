@@ -24,7 +24,7 @@ services:
       - ./nuxt/:/opt/application/nuxtSource
   strapi:
     build:
-      context: ./strapi/app
+      context: .docker/strapi/prod
     environment:
       DATABASE_CLIENT: mysql
       DATABASE_HOST: mariadb
