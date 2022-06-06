@@ -6,7 +6,7 @@ export default {
   target: 'static',
 
   env: {
-    STRAPI_BACK_URL: 'https://new.strapi.atelierkrouin.fr',
+    STRAPI_BACK_URL: 'https://strapi.atelierkrouin.fr',
     //STRAPI_BACK_URL: 'http://atelier-krouin.test:1337',
     ARTICLES_PER_PAGE: 8
   },
@@ -90,7 +90,7 @@ export default {
       let routes = [];
       let perPage = 8;
 
-      let articles = await axios.get('https://new.strapi.atelierkrouin.fr' + '/api/articles');
+      let articles = await axios.get('https://strapi.atelierkrouin.fr' + '/api/articles');
 
       // Add each article.
       articles.data.data.forEach(element => {
@@ -105,7 +105,7 @@ export default {
         routes.push('/articles/' + i);
       }
 
-      let categories = await axios.get('https://new.strapi.atelierkrouin.fr' + '/api/categories');
+      let categories = await axios.get('https://strapi.atelierkrouin.fr' + '/api/categories');
 
       // Add each categorie page (first one)
       categories.data.data.forEach(async function (element) {
@@ -129,7 +129,7 @@ export default {
           encodeValuesOnly: true,
         });
 
-        let nbArticles = await axios.get('https://new.strapi.atelierkrouin.fr' + '/api/articles?' + query);
+        let nbArticles = await axios.get('https://strapi.atelierkrouin.fr' + '/api/articles?' + query);
         let nbPages = nbArticles.data.meta.pagination.pageCount;
 
         for (let i = 1; i <= nbPages; i++) {
