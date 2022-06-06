@@ -1,12 +1,13 @@
 import axios from 'axios';
+import qs from 'qs';
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   env: {
-    //STRAPI_BACK_URL: 'https://strapi.atelierkrouin.fr',
-    STRAPI_BACK_URL: 'http://atelier-krouin.test:1338',
+    STRAPI_BACK_URL: 'https://new.strapi.atelierkrouin.fr',
+    //STRAPI_BACK_URL: 'http://atelier-krouin.test:1337',
     ARTICLES_PER_PAGE: 8
   },
 
@@ -89,36 +90,53 @@ export default {
       let routes = [];
       let perPage = 8;
 
-      let articles = await axios.get('https://strapi.atelierkrouin.fr' + '/articles');
+      let articles = await axios.get('https://new.strapi.atelierkrouin.fr' + '/api/articles');
 
       // Add each article.
-      articles.data.forEach(element => {
-        routes.push('/article/'+element.slug);
-      });
-
-      let categories = await axios.get('https://strapi.atelierkrouin.fr' + '/categories');
-
-      // Add each categorie page (first one)
-      categories.data.forEach(async function (element) {
-        routes.push('/categories/'+element.slug_categorie);
-
-        //@Todo : Add each page of categorie pages (depending on articles nb)
-        let nbArticles = await axios.get('https://strapi.atelierkrouin.fr' + '/articles/count?categories_contains=' + element.id);
-        let nbPages = Math.ceil(parseInt(nbArticles.data)/perPage);
-
-        for (let i = 1; i <= nbPages; i++) {
-          let path = '/categories/' + element.slug_categorie + '/' + i;
-          routes.push(path);
-        }
+      articles.data.data.forEach(element => {
+        routes.push('/article/'+element.attributes.slug);
       });
 
       // Add each page of lists articles (depending on articles nb)
-      let nbArticles = await axios.get('https://strapi.atelierkrouin.fr' + '/articles/count');
-      let nbPages = Math.ceil(parseInt(nbArticles.data)/perPage);
+      let nbArticles = articles.data.meta.pagination.total;
+      let nbPages = articles.data.meta.pagination.pageCount;
 
       for (let i = 1; i <= nbPages; i++) {
         routes.push('/articles/' + i);
       }
+
+      let categories = await axios.get('https://new.strapi.atelierkrouin.fr' + '/api/categories');
+
+      // Add each categorie page (first one)
+      categories.data.data.forEach(async function (element) {
+        let slug = element.attributes.slug;
+        routes.push('/categories/'+ slug);
+
+        let query = qs.stringify({
+          filters: {
+            category: {
+              slug: {
+                $eq: slug
+              }
+            }
+          },
+          pagination: {
+            page: 1,
+            pageSize: perPage,
+            withCount: true
+          }
+        }, {
+          encodeValuesOnly: true,
+        });
+
+        let nbArticles = await axios.get('https://new.strapi.atelierkrouin.fr' + '/api/articles?' + query);
+        let nbPages = nbArticles.data.meta.pagination.pageCount;
+
+        for (let i = 1; i <= nbPages; i++) {
+          let path = '/categories/' + slug + '/' + i;
+          routes.push(path);
+        }
+      });
 
       return routes;
     }

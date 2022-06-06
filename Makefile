@@ -25,4 +25,4 @@ develop:
 
 .PHONY: production
 production:
-	docker-compose up -d -f docker-compose.production.yml
+	docker-compose -f docker-compose.production.yml up -d 
