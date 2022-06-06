@@ -24,5 +24,5 @@ develop:
 	docker-compose exec strapi npm run develop
 
 .PHONY: production
-develop:
+production:
 	docker-compose up -d -f docker-compose.production.yml
