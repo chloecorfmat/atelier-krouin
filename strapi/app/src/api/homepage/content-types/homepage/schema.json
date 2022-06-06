@@ -16,7 +16,7 @@
       "type": "component",
       "repeatable": true,
       "component": "homepage.instagram-post",
-      "max": 3,
+      "max": 4,
       "min": 1
     }
   }
