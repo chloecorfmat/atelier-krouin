@@ -2,7 +2,7 @@
     <div class="block block--paragraph">
         <h2 v-if="paragraph.title">{{ paragraph.title }}</h2>
         <img v-if="paragraph.image_size == 'percent_100' && paragraph.image_order == 'after'"
-             class="image--100 " :src="baseUrl + paragraph.image.media.data.attributes.url" :alt="paragraph.image.media.attributes.alternativeText"
+             class="image--100 " :src="baseUrl + paragraph.image.media.data.attributes.url" :alt="paragraph.image.media.data.attributes.alternativeText"
         >
 
         <div v-if="paragraph.image_size == 'percent_33' && paragraph.image_order == 'after'"
