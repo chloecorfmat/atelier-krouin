@@ -13,12 +13,11 @@
     "webpack": "^5.71.0"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.1.7",
-    "@strapi/plugin-seo": "^1.7.2",
-    "@strapi/plugin-users-permissions": "4.1.7",
+    "@strapi/plugin-i18n": "4.1.12",
+    "@strapi/plugin-seo": "^1.7.3",
+    "@strapi/plugin-users-permissions": "4.1.12",
     "@strapi/provider-email-nodemailer": "^4.1.12",
-    "@strapi/strapi": "4.1.7",
-    "@webbio/strapi-plugin-scheduler": "^0.1.0",
+    "@strapi/strapi": "4.1.12",
     "mysql": "2.18.1",
     "slugify": "^1.6.5",
     "strapi-plugin-menus": "^0.2.4"

@@ -35,7 +35,7 @@ services:
     volumes:
       - ./strapi/app:/app
     ports:
-      - 1338:1337
+      - 1337:1337
     depends_on:
       - mariadb
     networks:

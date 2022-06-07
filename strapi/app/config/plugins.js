@@ -28,13 +28,6 @@ module.exports = ({ env }) => ({
       maxDepth: 3,
     },
   },
-  // https://market.strapi.io/plugins/@webbio-strapi-plugin-scheduler
-  scheduler: {
-    enabled: true,
-    config: {
-      model: "scheduler",
-    },
-  },
   // https://market.strapi.io/plugins/@strapi-plugin-seo
   seo: {
     enabled: true,

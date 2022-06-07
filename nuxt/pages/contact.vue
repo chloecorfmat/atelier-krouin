@@ -7,7 +7,7 @@
       <div class="contact--infos">
         <p>Pour me contacter, vous pouvez <strong>remplir le formulaire</strong> ci-dessous ou bien me contacter : </p>
         <ul class="contact--list">
-          <li class="contact--list-item">par <strong>e-mail</strong> : <a href="mailto:contact.chloecorfmat@gmail.com">contact.chloecorfmat@gmail.com</a></li>
+          <li class="contact--list-item">par <strong>e-mail</strong> : <a href="mailto:chloe@atelierkrouin.fr">chloe@atelierkrouin.fr</a></li>
           <li class="contact--list-item">par <strong>téléphone</strong> : <a href="tel:+33750346070">+33 7 50 34 60 70</a></li>
         </ul>
       </div>

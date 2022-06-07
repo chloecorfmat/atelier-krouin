@@ -11,7 +11,7 @@
         <div class="block article--details article">
             <span class="tag tag--secondary">{{ article.attributes.category.data.attributes.name }}</span>
             <p class="article--time">
-              Publié le <time :datetime="article.attributes.publishedAt">{{ published_date }}</time><span v-if="updated_date">, Modifié le <time :datetime="article.attributes.updatedAt">{{ updated_date }}</time></span>
+              Publié le <time :datetime="article.attributes.publishedAt">{{ published_date }}</time><span v-if="updated_date">, modifié le <time :datetime="article.attributes.updatedAt">{{ updated_date }}</time></span>
             </p>
             <h1 class="article--title">{{ article.attributes.title }}</h1>
             <p>{{ article.attributes.header }}</p>
@@ -32,6 +32,10 @@
 
         <div class="block block--signature">
             <p class="signature">Chloé</p>
+        </div>
+
+        <div class="block block--author">
+          <p>Article entièrement rédigé par Chloé Corfmat</p>
         </div>
 
       <!--<BlockComments v-if="article.instagram != null" :data="article.instagram" />-->
@@ -72,6 +76,9 @@
               'seo',
               'linked_articles.image_header.media',
               'linked_articles.category',
+              'author',
+              'createdBy',
+              'creator'
             ]
           }, {
             encodeValuesOnly: true,

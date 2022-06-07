@@ -6703,9 +6703,8 @@ a:hover, a:focus {
 .article--time {
   color: #ae325e;
   display: block;
-  font-family: "XCharter", serif;
-  text-transform: uppercase;
-  margin-bottom: 1.2rem;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-bottom: 1.3rem;
 }
 .article--title {
   color: #0D213F;
@@ -6732,7 +6731,7 @@ a:hover, a:focus {
   margin-bottom: 1.2rem;
 }
 .article .article--time {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin: 1rem auto;
 }
 
@@ -6924,6 +6923,16 @@ a.tag--reverse:hover, a.tag--reverse:focus {
 }
 
 /** BLOCKS **/
+/** BLOCK AUTHOR **/
+/* Use in article */
+.block--author {
+  padding-top: 0;
+}
+.block--author p {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
 /** BLOCK COLORED **/
 /* Use in article */
 .block--colored {
@@ -7128,7 +7137,7 @@ a.tag--reverse:hover, a.tag--reverse:focus {
   margin-top: 1rem;
 }
 .list--articles .article--time {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   margin-top: 0.5rem;
   margin-bottom: 0;
 }
