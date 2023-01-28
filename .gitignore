@@ -4,3 +4,4 @@ dist
 strapi/data
 nuxtDeploy
 .DS_Store
+.vscode

@@ -44,6 +44,11 @@
                 'image_header.media',
                 'category'
               ],
+              filters: {
+                unlisted: {
+                  $eq: false,
+                },
+              },
               sort: ['publishedAt:desc'],
               pagination: {
                 page: page,
@@ -56,7 +61,7 @@
 
             let data = await $http.$get(process.env.STRAPI_BACK_URL + '/api/articles?' + query);
             let articles = data.data;
-            let articlesNbDisplayed = data.meta.pagination.pageSize;
+            let articlesNbDisplayed = articles.length;
             let articlesNb = data.meta.pagination.total;
             let pagesNb = data.meta.pagination.pageCount;
 

@@ -62,6 +62,10 @@
       "relation": "manyToMany",
       "target": "api::article.article",
       "inversedBy": "linked_articles"
+    },
+    "unlisted": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

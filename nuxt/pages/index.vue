@@ -45,6 +45,11 @@ export default {
           'image_header.media',
           'category'
         ],
+        filters: {
+          unlisted: {
+            $eq: false,
+          },
+        },
         sort: ['publishedAt:desc'],
         pagination: {
           start:0,

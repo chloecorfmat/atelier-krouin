@@ -1,45 +1,47 @@
 <template>
     <div class="block block--paragraph">
         <h2 v-if="paragraph.title">{{ paragraph.title }}</h2>
-        <img v-if="paragraph.image_size == 'percent_100' && paragraph.image_order == 'after'"
-             class="image--100 " :src="baseUrl + paragraph.image.media.data.attributes.url" :alt="paragraph.image.media.data.attributes.alternativeText"
-        >
 
+        <StrapiImage v-if="paragraph.image_size == 'percent_100' && paragraph.image_order == 'after'" :image="paragraph.image" format="xlarge" classList="image--100" />
+        
         <div v-if="paragraph.image_size == 'percent_33' && paragraph.image_order == 'after'"
              class="image--33 image--float image--float-right"
         >
-            <img class="image--paragraph" :src="baseUrl + paragraph.image.media.data.attributes.url" :alt="paragraph.image.media.data.attributes.alternativeText">
+            <StrapiImage :image="paragraph.image" format="medium" classList="image--paragraph" />
         </div>
 
         <div v-if="paragraph.image_size == 'percent_50' && paragraph.image_order == 'after'"
              class="image--50 image--float image--float-right"
         >
-            <img class="image--paragraph" :src="baseUrl + paragraph.image.media.data.attributes.url" :alt="paragraph.image.media.data.attributes.alternativeText">
+            <StrapiImage :image="paragraph.image" format="large" classList="image--paragraph" />
         </div>
 
         <div v-if="paragraph.image_size == 'percent_33' && paragraph.image_order == 'before'"
              class="image--33 image--float image--float-left"
         >
-            <img class="image--paragraph" :src="baseUrl + paragraph.image.media.data.attributes.url" :alt="paragraph.image.media.data.attributes.alternativeText">
+            <StrapiImage :image="paragraph.image" format="medium" classList="image--paragraph" />
         </div>
 
         <div v-if="paragraph.image_size == 'percent_50' && paragraph.image_order == 'before'"
              class="image--50 image--float image--float-left"
         >
-            <img class="image--paragraph" :src="baseUrl + paragraph.image.media.data.attributes.url" :alt="paragraph.image.media.data.attributes.alternativeText">
+            <StrapiImage :image="paragraph.image" format="large" classList="image--paragraph" />
         </div>
 
         <div class="wysiwyg" v-html="paragraph.content" />
 
-        <img v-if="paragraph.image_size == 'percent_100' && paragraph.image_order == 'before'"
-             class="image--100 " :src="baseUrl + paragraph.image.media.data.attributes.url" :alt="paragraph.image.media.data.attributes.alternativeText"
-        >
+        <StrapiImage v-if="paragraph.image_size == 'percent_100' && paragraph.image_order == 'before'" :image="paragraph.image" format="xlarge" classList="image--100" />
+        
     </div>
 </template>
 
 <script>
+    import StrapiImage from './StrapiImage';
     export default {
         name: 'Paragraph',
+        components: {
+    StrapiImage,
+},
         props: {
             paragraph: {},
         },

@@ -16,7 +16,8 @@
           <div class="article--tag">
             <NuxtLink class="tag tag--secondary on-image" :to="'/categories/' + news.attributes.category.data.attributes.slug">{{ news.attributes.category.data.attributes.name}}</NuxtLink>
           </div>
-          <img class="article--image" :src="imgUrl" :alt="news.attributes.image_header.media.data.attributes.alternativeText" />
+          
+          <StrapiImage :image="news.attributes.image_header" classList="article--image" format="xlarge"/>
         </div>
       </article>
     </div>
@@ -24,15 +25,16 @@
 </template>
 
 <script>
+    import StrapiImage from './StrapiImage';
     export default {
         name: 'BlockNews',
+        components: {
+          StrapiImage
+        },
         props: {
           news: null
         },
         computed: {
-          imgUrl: function () {
-            return process.env.STRAPI_BACK_URL + this.news.attributes.image_header.media.data.attributes.url;
-          },
           date: function () {
             let published_date = new Date(this.news.attributes.publishedAt);
             let updated_date = new Date(this.news.attributes.updatedAt);

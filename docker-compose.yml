@@ -22,6 +22,10 @@ services:
     volumes:
       - ./apache/nuxtDeploy/:/opt/application/nuxtDeploy
       - ./nuxt/:/opt/application/nuxtSource
+    ports:
+      - 3001:3001
+    extra_hosts:
+      - "atelierkrouin.local:172.17.0.1"
   strapi:
     build:
       context: .docker/strapi/dev

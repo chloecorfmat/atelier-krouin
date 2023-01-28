@@ -52,8 +52,12 @@
                   slug: {
                     $eq: params.slug
                   }
-                }
+                },
+                unlisted: {
+                  $eq: false,
+                },
               },
+              
               pagination: {
                 page: page,
                 pageSize: perPage,
@@ -65,7 +69,7 @@
 
             let data = await $http.$get(process.env.STRAPI_BACK_URL + '/api/articles?' + query);
             let articles = data.data;
-            let articlesNbDisplayed = data.meta.pagination.pageSize;
+            let articlesNbDisplayed = articles.length;
             let articlesNb = data.meta.pagination.total;
             let pagesNb = data.meta.pagination.pageCount;
             let baseUrl = '/categories/' + params.slug + '/';

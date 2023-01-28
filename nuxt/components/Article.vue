@@ -2,7 +2,7 @@
   <li class="list--articles-item">
     <NuxtLink class="list--articles-item--container" :to="url">
       <div class="article--image--container">
-        <img class="article--image" :src="imgUrl" :alt="this.article.attributes.image_header.media.data.attributes.alternativeText" />
+        <StrapiImage classList="article--image" :image="this.article.attributes.image_header" format="medium"/>
       </div>
       <div class="article--infos">
         <h3 class="article--title">{{ article.attributes.title }}</h3>
@@ -14,8 +14,13 @@
 </template>
 
 <script>
+import StrapiImage from './StrapiImage';
+
 export default {
     name: 'Article',
+    components: {
+      StrapiImage
+    },
     props: {
       article: {}
     },
@@ -26,9 +31,6 @@ export default {
       }
     },
     computed: {
-      imgUrl: function () {
-        return process.env.STRAPI_BACK_URL + this.article.attributes.image_header.media.data.attributes.url;
-      },
       date: function () {
         let published_date = new Date(this.article.attributes.publishedAt);
         let updated_date = new Date(this.article.attributes.updatedAt);

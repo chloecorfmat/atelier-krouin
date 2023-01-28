@@ -3,7 +3,7 @@
         <div v-if="article.attributes.image_header" class="block news">
             <div class="news--pseudo">
                 <div :class="'article--image--container image-v-' + article.attributes.image_header.centered_on ">
-                    <img :src="baseUrl + article.attributes.image_header.media.data.attributes.url" class="article--image">
+                    <StrapiImage :image="article.attributes.image_header" format="xlarge" classList="article--image" />
                 </div>
             </div>
         </div>
@@ -46,15 +46,19 @@
     import Paragraph from "../../components/Paragraph";
     import BlockLinkedArticles from "../../components/BlockLinkedArticles";
     import BlockComments from "../../components/BlockComments";
+    import StrapiImage from "../../components/StrapiImage";
     import qs from "qs";
+import { maxHeaderSize } from "http";
 
     export default {
         name: 'Article',
         components: {
-            Paragraph,
-            BlockLinkedArticles,
-            BlockComments
-        },
+    Paragraph,
+    BlockLinkedArticles,
+    BlockComments,
+    StrapiImage,
+    StrapiImage
+},
         data: function() {
           return {
               article: null
@@ -74,6 +78,8 @@
               'content.cta',
               'category',
               'seo',
+              'seo.metaSocial',
+              'seo.metaSocial.image',
               'linked_articles.image_header.media',
               'linked_articles.category',
               'author',
@@ -109,6 +115,19 @@
             } else {
               return false;
             }
+          },
+          metaSocial: function () {
+            let meta = this.article.attributes.seo.metaSocial;
+            let obj = {};
+            meta.forEach(element => {
+              let socialNetwork = element.socialNetwork.toLowerCase();
+              obj[socialNetwork] = {
+                'description' : element.description,
+                'title': element.title,
+                'image': element.image
+              }
+            });
+            return obj;
           }
         },
         head() {
@@ -119,6 +138,78 @@
                 hid: 'description',
                 name: 'description',
                 content: this.article.attributes.seo.metaDescription
+              },
+              {
+                property: 'og:locale',
+                content: 'fr_FR'
+              },
+              {
+                property: 'og:site_name',
+                content: 'Atelier Krouiñ'
+              },
+              // Facebook
+              {
+                property: 'og:url',
+                content: process.env.FRONT_URL + "/article/" + this.article.attributes.seo.canonicalURL
+              },
+              {
+                property: 'og:title',
+                content: this.metaSocial.facebook.title
+              },
+              {
+                property: 'og:description',
+                content: this.metaSocial.facebook.description
+              },
+              {
+                property: 'og:image',
+                content: process.env.STRAPI_BACK_URL + this.metaSocial.facebook.image.data.attributes.formats.large.url
+              },
+              {
+                property: 'og:image:secure_url',
+                content: process.env.STRAPI_BACK_URL + this.metaSocial.facebook.image.data.attributes.formats.large.url
+              },
+              {
+                property: 'og:image:width',
+                content: this.metaSocial.facebook.image.data.attributes.formats.large.width
+              },
+              {
+                property: 'og:image:height',
+                content: this.metaSocial.facebook.image.data.attributes.formats.large.height
+              },
+              /**{
+                property: 'fb:app_id',
+                content: ''
+              },**/
+              // Twitter
+              {
+                name: 'twitter:card',
+                content: 'summary_large_image',
+              },
+              {
+                name: 'twitter:site',
+                content: '@chloecorfmat'
+              },
+              {
+                name: 'twitter:creator',
+                content: '@chloecorfmat'
+              },
+              {
+                name: 'twitter:title',
+                content: this.metaSocial.twitter.title
+              },
+              {
+                name: 'twitter:description',
+                content: this.metaSocial.facebook.description
+              },
+              {
+                name: 'twitter:image',
+                content: process.env.STRAPI_BACK_URL + this.metaSocial.facebook.image.data.attributes.formats.large.url,
+              },
+            ],
+            link: [
+              {
+                rel: "canonical",
+                href: process.env.FRONT_URL + "/article/" + this.article.attributes.seo.canonicalURL
               }
             ]
           }

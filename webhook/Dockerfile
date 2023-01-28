@@ -1,7 +1,7 @@
 FROM golang:1.17.2-bullseye
 
 RUN apt-get update
-RUN apt-get install -y nodejs=12.22.5~dfsg-2~11u1 npm=7.5.2+ds-2
+RUN apt-get install -y nodejs npm
 RUN npm install -g nuxt
 
 WORKDIR /opt/application/nuxtSource
